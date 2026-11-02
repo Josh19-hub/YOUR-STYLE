@@ -1,1 +1,171 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOUR STYLE | Guatemala</title>
+<meta name="description" content="YOUR STYLE. Ropa, manga, cómics, música y cultura alternativa en Guatemala.">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b0b0d;color:#f5f3ef;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.logo{font-size:27px;font-weight:900;letter-spacing:2px}
+.logo span,.accent{color:#d7ff36}
+nav a{color:white;text-decoration:none;margin-left:18px;font-size:13px}
+.hero{min-height:540px;padding:90px 8%;background:radial-gradient(circle at 80% 40%,#35343b,#111115 55%,#080809);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{color:#d7ff36;letter-spacing:4px;font-size:11px}
+h1{font-size:clamp(65px,12vw,120px);line-height:.83;margin:25px 0;font-weight:900;letter-spacing:-5px}
+.hero p{max-width:420px;color:#c4c1c1;line-height:1.7}
+.btn{display:inline-block;background:#d7ff36;color:#111;padding:15px 22px;text-decoration:none;font-weight:bold;margin-top:20px;width:max-content;font-size:12px}
+.categories{display:grid;grid-template-columns:repeat(5,1fr);border-block:1px solid #38383a}
+.categories a{padding:23px 5px;text-align:center;color:white;text-decoration:none;border-right:1px solid #38383a;font-weight:bold;font-size:12px}
+section.content{padding:75px 8%}
+h2{font-size:43px;margin:10px 0 30px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.filters button{background:transparent;color:white;border:1px solid #555;padding:10px 16px;cursor:pointer}
+.filters button.active{background:#d7ff36;color:#111;border-color:#d7ff36}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.product{background:#17171b;padding:12px}
+.product[hidden]{display:none}
+.picture{height:220px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:30px;font-weight:900;line-height:1.1;letter-spacing:2px}
+.p1{background:linear-gradient(135deg,#44433e,#171719)}
+.p2{background:linear-gradient(135deg,#51334e,#171319)}
+.p3{background:linear-gradient(135deg,#70522a,#191714)}
+.p4{background:linear-gradient(135deg,#24494b,#111819)}
+.product small{color:#d7ff36;letter-spacing:2px}
+.product h3{font-size:15px}
+.product p{font-size:12px;color:#aaa}
+.product button{background:transparent;color:#d7ff36;border:1px solid #d7ff36;padding:10px;width:100%;cursor:pointer}
+.manifesto{background:#d7ff36;color:#111;text-align:center;padding:75px 8%}
+.manifesto h2{font-size:clamp(45px,8vw,80px);margin:15px 0}
+.manifesto p{font-size:13px;line-height:1.7}
+.contact{padding:70px 8%;background:#151518;text-align:center}
+.contact p{color:#aaa;line-height:1.7}
+footer{padding:25px;text-align:center;border-top:1px solid #333;color:#888;font-size:11px}
+@media(max-width:750px){
+header{padding:18px 5%}nav a{margin-left:8px;font-size:11px}
+.hero{padding:75px 7%}h1{letter-spacing:-3px}
+.categories{grid-template-columns:repeat(2,1fr)}
+.categories a{border-bottom:1px solid #333}
+.categories a:last-child{grid-column:span 2}
+section.content{padding:55px 6%}
+.products{grid-template-columns:repeat(2,1fr)}
+.picture{height:175px;font-size:23px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">YOUR<span>STYLE</span></div>
+<nav>
+<a href="#catalogo">Catálogo</a>
+<a href="#categorias">Categorías</a>
+<a href="#contacto">Pedidos</a>
+</nav>
+</header>
+
+<main>
+<div class="hero">
+<div class="eyebrow">ESTILO · CULTURA · IDENTIDAD</div>
+<h1>NO SIGAS<br><span class="accent">EL ESTILO.</span><br>CRÉALO.</h1>
+<p>Ropa, manga, cómics, música y accesorios. Encuentra aquello que representa tu esencia.</p>
+<a class="btn" href="#catalogo">EXPLORAR COLECCIÓN ↗</a>
+</div>
+
+<div class="categories" id="categorias">
+<a href="#catalogo">ROPA ↗</a>
+<a href="#catalogo">MANGA ↗</a>
+<a href="#catalogo">CÓMICS ↗</a>
+<a href="#catalogo">MÚSICA ↗</a>
+<a href="#catalogo">ACCESORIOS ↗</a>
+</div>
+
+<section class="content" id="catalogo">
+<div class="eyebrow">SELECCIÓN YOUR STYLE</div>
+<h2>Explora el <span class="accent">catálogo.</span></h2>
+
+<div class="filters">
+<button class="active" onclick="filterProducts('todos',this)">Todos</button>
+<button onclick="filterProducts('ropa',this)">Ropa</button>
+<button onclick="filterProducts('manga',this)">Manga</button>
+<button onclick="filterProducts('comics',this)">Cómics</button>
+<button onclick="filterProducts('accesorios',this)">Accesorios</button>
+</div>
+
+<div class="products">
+
+<article class="product" data-category="ropa">
+<div class="picture p1">YOUR<br>STYLE</div>
+<small>ROPA</small>
+<h3>Producto de ropa</h3>
+<p>Talla universal por el momento</p>
+<p>Existencias y precio por confirmar</p>
+<button onclick="consult('Producto de ropa')">Consultar producto</button>
+</article>
+
+<article class="product" data-category="manga">
+<div class="picture p2">MANGA<br>& ANIME</div>
+<small>MANGA & ANIME</small>
+<h3>Artículo de colección</h3>
+<p>Disponibilidad por confirmar</p>
+<button onclick="consult('Artículo de manga y anime')">Consultar producto</button>
+</article>
+
+<article class="product" data-category="comics">
+<div class="picture p3">COMIC<br>UNIVERSE</div>
+<small>CÓMICS</small>
+<h3>Cómics y novelas gráficas</h3>
+<p>Disponibilidad por confirmar</p>
+<button onclick="consult('Cómics y novelas gráficas')">Consultar producto</button>
+</article>
+
+<article class="product" data-category="accesorios">
+<div class="picture p4">DETAILS<br>MATTER</div>
+<small>ACCESORIOS</small>
+<h3>Accesorios alternativos</h3>
+<p>Disponibilidad por confirmar</p>
+<button onclick="consult('Accesorios')">Consultar producto</button>
+</article>
+
+</div>
+<p style="color:#888;font-size:11px;margin-top:25px">Catálogo experimental. Los productos reales, fotografías, precios y existencias se incorporarán posteriormente.</p>
+</section>
+
+<div class="manifesto">
+<div class="eyebrow" style="color:#333">TU IDENTIDAD NO TIENE LÍMITES</div>
+<h2>NO ES SOLO LO QUE USAS.<br>ES LO QUE EXPRESAS.</h2>
+<p>YOUR STYLE · GUATEMALA</p>
+</div>
+
+<section class="contact" id="contacto">
+<div class="eyebrow">YOUR STYLE · GUATEMALA</div>
+<h2>¿ENCONTRASTE ALGO?</h2>
+<p>Pronto podrás consultar tus productos y realizar tus pedidos directamente con nosotros.</p>
+<a class="btn" href="mailto:pedidos@yourstyle.gt">CONTACTAR</a>
+</section>
+</main>
+
+<footer>
+YOUR STYLE © 2026 · GUATEMALA · TODOS LOS DERECHOS RESERVADOS
+</footer>
+
+<script>
+function filterProducts(category,button){
+document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+button.classList.add('active');
+document.querySelectorAll('.product').forEach(p=>{
+p.hidden=category!=='todos' && p.dataset.category!==category;
+});
+}
+function consult(product){
+alert('Gracias por tu interés en '+product+'. Próximamente habilitaremos los pedidos por WhatsApp Business.');
+}
+</script>
+
+</body>
+</html>
+
