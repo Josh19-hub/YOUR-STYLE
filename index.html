@@ -2,170 +2,632 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YOUR STYLE | Guatemala</title>
-<meta name="description" content="YOUR STYLE. Ropa, manga, cómics, música y cultura alternativa en Guatemala.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="YOUR STYLE: ropa, música, anime, manga, cómics y cultura alternativa.">
+  <title>YOUR STYLE | Tu esencia, tu estilo</title>
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b0b0d;color:#f5f3ef;font-family:Arial,sans-serif}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
-.logo{font-size:27px;font-weight:900;letter-spacing:2px}
-.logo span,.accent{color:#d7ff36}
-nav a{color:white;text-decoration:none;margin-left:18px;font-size:13px}
-.hero{min-height:540px;padding:90px 8%;background:radial-gradient(circle at 80% 40%,#35343b,#111115 55%,#080809);display:flex;flex-direction:column;justify-content:center}
-.eyebrow{color:#d7ff36;letter-spacing:4px;font-size:11px}
-h1{font-size:clamp(65px,12vw,120px);line-height:.83;margin:25px 0;font-weight:900;letter-spacing:-5px}
-.hero p{max-width:420px;color:#c4c1c1;line-height:1.7}
-.btn{display:inline-block;background:#d7ff36;color:#111;padding:15px 22px;text-decoration:none;font-weight:bold;margin-top:20px;width:max-content;font-size:12px}
-.categories{display:grid;grid-template-columns:repeat(5,1fr);border-block:1px solid #38383a}
-.categories a{padding:23px 5px;text-align:center;color:white;text-decoration:none;border-right:1px solid #38383a;font-weight:bold;font-size:12px}
-section.content{padding:75px 8%}
-h2{font-size:43px;margin:10px 0 30px}
-.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
-.filters button{background:transparent;color:white;border:1px solid #555;padding:10px 16px;cursor:pointer}
-.filters button.active{background:#d7ff36;color:#111;border-color:#d7ff36}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.product{background:#17171b;padding:12px}
-.product[hidden]{display:none}
-.picture{height:220px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:30px;font-weight:900;line-height:1.1;letter-spacing:2px}
-.p1{background:linear-gradient(135deg,#44433e,#171719)}
-.p2{background:linear-gradient(135deg,#51334e,#171319)}
-.p3{background:linear-gradient(135deg,#70522a,#191714)}
-.p4{background:linear-gradient(135deg,#24494b,#111819)}
-.product small{color:#d7ff36;letter-spacing:2px}
-.product h3{font-size:15px}
-.product p{font-size:12px;color:#aaa}
-.product button{background:transparent;color:#d7ff36;border:1px solid #d7ff36;padding:10px;width:100%;cursor:pointer}
-.manifesto{background:#d7ff36;color:#111;text-align:center;padding:75px 8%}
-.manifesto h2{font-size:clamp(45px,8vw,80px);margin:15px 0}
-.manifesto p{font-size:13px;line-height:1.7}
-.contact{padding:70px 8%;background:#151518;text-align:center}
-.contact p{color:#aaa;line-height:1.7}
-footer{padding:25px;text-align:center;border-top:1px solid #333;color:#888;font-size:11px}
-@media(max-width:750px){
-header{padding:18px 5%}nav a{margin-left:8px;font-size:11px}
-.hero{padding:75px 7%}h1{letter-spacing:-3px}
-.categories{grid-template-columns:repeat(2,1fr)}
-.categories a{border-bottom:1px solid #333}
-.categories a:last-child{grid-column:span 2}
-section.content{padding:55px 6%}
-.products{grid-template-columns:repeat(2,1fr)}
-.picture{height:175px;font-size:23px}
-}
-</style>
+  <style>
+    :root {
+      --bg: #090909;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --text: #f4f0ed;
+      --muted: #a5a09d;
+      --accent: #c9a46a;
+      --line: #303030;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    header {
+      min-height: 76px;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      background: #090909;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      min-height: 490px;
+      padding: 90px 8%;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 80% 40%, #3b3025 0%, transparent 35%),
+        linear-gradient(110deg, #080808 35%, #17130f 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      letter-spacing: 5px;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: #c2bdb8;
+      max-width: 470px;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--accent);
+      color: #111;
+      border: 1px solid var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .section-heading small {
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(27px, 5vw, 38px);
+      margin-top: 7px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category {
+      min-height: 100px;
+      padding: 22px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      transition: 0.25s;
+    }
+
+    .category:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .catalog {
+      background: #0d0d0d;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 30px;
+    }
+
+    .filter {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 9px 16px;
+      font-size: 12px;
+    }
+
+    .filter.active,
+    .filter:hover {
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: 0.25s;
+    }
+
+    .product:hover {
+      border-color: #786344;
+      transform: translateY(-4px);
+    }
+
+    .product img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      background: #202020;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-category {
+      color: var(--accent);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .product h3 {
+      font-size: 17px;
+      margin: 7px 0;
+    }
+
+    .product p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .stock {
+      color: #b6c99c;
+      font-size: 11px;
+      margin-bottom: 14px;
+    }
+
+    .order-button {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .order-button:hover {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .manifesto {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, #211b15 0%, #090909 70%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .manifesto h2 {
+      font-size: clamp(26px, 5vw, 43px);
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .manifesto h2 span {
+      color: var(--accent);
+    }
+
+    .manifesto p {
+      max-width: 600px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 12px auto 25px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 28px 7%;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 10;
+      padding: 13px 17px;
+      border-radius: 30px;
+      background: #218c58;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px #0008;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 420px;
+        padding: 70px 7%;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product h3 {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">YOUR<span>STYLE</span></div>
-<nav>
-<a href="#catalogo">Catálogo</a>
-<a href="#categorias">Categorías</a>
-<a href="#contacto">Pedidos</a>
-</nav>
-</header>
+  <header>
+    <a class="logo" href="#">YOUR <span>STYLE</span></a>
 
-<main>
-<div class="hero">
-<div class="eyebrow">ESTILO · CULTURA · IDENTIDAD</div>
-<h1>NO SIGAS<br><span class="accent">EL ESTILO.</span><br>CRÉALO.</h1>
-<p>Ropa, manga, cómics, música y accesorios. Encuentra aquello que representa tu esencia.</p>
-<a class="btn" href="#catalogo">EXPLORAR COLECCIÓN ↗</a>
-</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-<div class="categories" id="categorias">
-<a href="#catalogo">ROPA ↗</a>
-<a href="#catalogo">MANGA ↗</a>
-<a href="#catalogo">CÓMICS ↗</a>
-<a href="#catalogo">MÚSICA ↗</a>
-<a href="#catalogo">ACCESORIOS ↗</a>
-</div>
+  <main>
 
-<section class="content" id="catalogo">
-<div class="eyebrow">SELECCIÓN YOUR STYLE</div>
-<h2>Explora el <span class="accent">catálogo.</span></h2>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <div class="eyebrow">ESTILO · IDENTIDAD · CULTURA</div>
 
-<div class="filters">
-<button class="active" onclick="filterProducts('todos',this)">Todos</button>
-<button onclick="filterProducts('ropa',this)">Ropa</button>
-<button onclick="filterProducts('manga',this)">Manga</button>
-<button onclick="filterProducts('comics',this)">Cómics</button>
-<button onclick="filterProducts('accesorios',this)">Accesorios</button>
-</div>
+        <h1>
+          YOUR<br>
+          <span>STYLE.</span>
+        </h1>
 
-<div class="products">
+        <p>
+          No se trata solamente de lo que llevas.
+          Se trata de lo que eres, lo que escuchas,
+          lo que te inspira y lo que te hace diferente.
+        </p>
 
-<article class="product" data-category="ropa">
-<div class="picture p1">YOUR<br>STYLE</div>
-<small>ROPA</small>
-<h3>Producto de ropa</h3>
-<p>Talla universal por el momento</p>
-<p>Existencias y precio por confirmar</p>
-<button onclick="consult('Producto de ropa')">Consultar producto</button>
-</article>
+        <a href="#catalogo" class="button">EXPLORAR COLECCIÓN</a>
+      </div>
+    </section>
 
-<article class="product" data-category="manga">
-<div class="picture p2">MANGA<br>& ANIME</div>
-<small>MANGA & ANIME</small>
-<h3>Artículo de colección</h3>
-<p>Disponibilidad por confirmar</p>
-<button onclick="consult('Artículo de manga y anime')">Consultar producto</button>
-</article>
+    <section id="categorias">
+      <div class="section-heading">
+        <small>EXPLORA TU UNIVERSO</small>
+        <h2>Categorías</h2>
+        <p>Encuentra aquello que conecta con tu esencia.</p>
+      </div>
 
-<article class="product" data-category="comics">
-<div class="picture p3">COMIC<br>UNIVERSE</div>
-<small>CÓMICS</small>
-<h3>Cómics y novelas gráficas</h3>
-<p>Disponibilidad por confirmar</p>
-<button onclick="consult('Cómics y novelas gráficas')">Consultar producto</button>
-</article>
+      <div class="categories">
+        <a class="category" href="#catalogo" onclick="filterProducts('ropa')">ROPA</a>
+        <a class="category" href="#catalogo" onclick="filterProducts('anime')">ANIME & MANGA</a>
+        <a class="category" href="#catalogo" onclick="filterProducts('comics')">CÓMICS</a>
+        <a class="category" href="#catalogo" onclick="filterProducts('musica')">MÚSICA</a>
+      </div>
+    </section>
 
-<article class="product" data-category="accesorios">
-<div class="picture p4">DETAILS<br>MATTER</div>
-<small>ACCESORIOS</small>
-<h3>Accesorios alternativos</h3>
-<p>Disponibilidad por confirmar</p>
-<button onclick="consult('Accesorios')">Consultar producto</button>
-</article>
+    <section class="catalog" id="catalogo">
+      <div class="section-heading">
+        <small>YOUR STYLE COLLECTION</small>
+        <h2>Catálogo</h2>
+        <p>Productos disponibles. Consulta por WhatsApp para realizar tu pedido.</p>
+      </div>
 
-</div>
-<p style="color:#888;font-size:11px;margin-top:25px">Catálogo experimental. Los productos reales, fotografías, precios y existencias se incorporarán posteriormente.</p>
-</section>
+      <div class="filters">
+        <button class="filter active" onclick="filterProducts('todos', this)">TODOS</button>
+        <button class="filter" onclick="filterProducts('anime', this)">ANIME</button>
+        <button class="filter" onclick="filterProducts('comics', this)">CÓMICS</button>
+        <button class="filter" onclick="filterProducts('musica', this)">MÚSICA</button>
+        <button class="filter" onclick="filterProducts('accesorios', this)">ACCESORIOS</button>
+      </div>
 
-<div class="manifesto">
-<div class="eyebrow" style="color:#333">TU IDENTIDAD NO TIENE LÍMITES</div>
-<h2>NO ES SOLO LO QUE USAS.<br>ES LO QUE EXPRESAS.</h2>
-<p>YOUR STYLE · GUATEMALA</p>
-</div>
+      <div class="products">
 
-<section class="contact" id="contacto">
-<div class="eyebrow">YOUR STYLE · GUATEMALA</div>
-<h2>¿ENCONTRASTE ALGO?</h2>
-<p>Pronto podrás consultar tus productos y realizar tus pedidos directamente con nosotros.</p>
-<a class="btn" href="mailto:pedidos@yourstyle.gt">CONTACTAR</a>
-</section>
-</main>
+        <article class="product" data-category="accesorios">
+          <img src="assets/accesorios-motorista.jpg"
+               alt="Accesorios para motorista" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Accesorios</span>
+            <h3>Accesorios motorista</h3>
+            <p>Estilo y personalidad para quienes viven sobre ruedas.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Accesorios motorista')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
 
-<footer>
-YOUR STYLE © 2026 · GUATEMALA · TODOS LOS DERECHOS RESERVADOS
-</footer>
+        <article class="product" data-category="musica">
+          <img src="assets/beatles.jpg" alt="Producto The Beatles" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Música</span>
+            <h3>The Beatles</h3>
+            <p>Un clásico que trasciende generaciones.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('The Beatles')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
 
-<script>
-function filterProducts(category,button){
-document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-button.classList.add('active');
-document.querySelectorAll('.product').forEach(p=>{
-p.hidden=category!=='todos' && p.dataset.category!==category;
-});
-}
-function consult(product){
-alert('Gracias por tu interés en '+product+'. Próximamente habilitaremos los pedidos por WhatsApp Business.');
-}
-</script>
+        <article class="product" data-category="comics">
+          <img src="assets/deadpool.jpg" alt="Producto Deadpool" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Cómics</span>
+            <h3>Deadpool</h3>
+            <p>Actitud irreverente y cultura de cómics.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Deadpool')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="anime">
+          <img src="assets/goku.jpg" alt="Producto Goku" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Anime</span>
+            <h3>Dragon Ball - Goku</h3>
+            <p>Una leyenda del universo anime.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Dragon Ball - Goku')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="musica">
+          <img src="assets/led-zeppelin.jpg" alt="Producto Led Zeppelin" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Música</span>
+            <h3>Led Zeppelin</h3>
+            <p>Rock, historia y energía.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Led Zeppelin')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="anime">
+          <img src="assets/luffy.jpg" alt="Producto Monkey D. Luffy" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Anime</span>
+            <h3>One Piece - Luffy</h3>
+            <p>La aventura continúa.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('One Piece - Luffy')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="musica">
+          <img src="assets/nirvana.jpg" alt="Producto Nirvana" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Música</span>
+            <h3>Nirvana</h3>
+            <p>Espíritu alternativo y esencia grunge.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Nirvana')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="musica">
+          <img src="assets/pink-floyd.jpg" alt="Producto Pink Floyd" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Música</span>
+            <h3>Pink Floyd</h3>
+            <p>Una experiencia musical fuera de lo convencional.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Pink Floyd')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+        <article class="product" data-category="comics">
+          <img src="assets/spiderman.jpg" alt="Producto Spider-Man" loading="lazy">
+          <div class="product-info">
+            <span class="product-category">Cómics</span>
+            <h3>Spider-Man</h3>
+            <p>Uno de los grandes iconos de Marvel.</p>
+            <div class="stock">● Existencia: 1 unidad</div>
+            <button class="order-button" onclick="order('Spider-Man')">CONSULTAR / PEDIR</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <h2>NO SIGAS TENDENCIAS.<br><span>DEFINE TU ESTILO.</span></h2>
+      <p>
+        YOUR STYLE reúne música, arte, moda y cultura.
+        Un espacio para expresar aquello que te representa.
+      </p>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="section-heading">
+        <small>ESTAMOS PARA ATENDERTE</small>
+        <h2>¿Buscas algo especial?</h2>
+      </div>
+
+      <p>Escríbenos para consultar disponibilidad, tallas y pedidos.</p>
+
+      <a class="button"
+         href="https://wa.me/50234899987?text=Hola%20YOUR%20STYLE%2C%20quiero%20consultar%20por%20un%20producto."
+         target="_blank" rel="noopener">
+        CONTACTAR POR WHATSAPP
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    YOUR STYLE © 2026 · GUATEMALA · ESTILO SIN LÍMITES
+  </footer>
+
+  <a class="whatsapp"
+     href="https://wa.me/50234899987?text=Hola%20YOUR%20STYLE"
+     target="_blank" rel="noopener">
+    WHATSAPP
+  </a>
+
+  <script>
+    function filterProducts(category, button) {
+      const products = document.querySelectorAll('.product');
+      const filters = document.querySelectorAll('.filter');
+
+      products.forEach(product => {
+        const match =
+          category === 'todos' ||
+          product.dataset.category === category;
+
+        product.style.display = match ? '' : 'none';
+      });
+
+      if (button) {
+        filters.forEach(filter => filter.classList.remove('active'));
+        button.classList.add('active');
+      } else {
+        filters.forEach(filter => {
+          filter.classList.toggle(
+            'active',
+            filter.textContent.trim().toLowerCase() === category
+          );
+        });
+      }
+    }
+
+    function order(productName) {
+      const message =
+        `Hola YOUR STYLE, quiero consultar disponibilidad y realizar un pedido de: ${productName}. ¿Me pueden brindar información sobre precio y opciones?`;
+
+      const url =
+        'https://wa.me/50234899987?text=' +
+        encodeURIComponent(message);
+
+      window.open(url, '_blank');
+    }
+  </script>
 
 </body>
 </html>
-
