@@ -783,12 +783,33 @@
         price:"Q95.00",
         stock:"Consulta disponibilidad"
       },
-      
+      {
+        image:"cuadro-coleccionable-onepeace.jpg",
+        category:["anime"],
+        label:"Anime / Arte Coleccionable",
+        name:"One Piece – Cuadro Coleccionable",
+        description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece y en quienes nunca dejan de perseguir su aventura.",
+        price:"Q60.00",
+        stock:"Consulta disponibilidad"
+      },
+      {
+        image:"cuadrocoleccionable-deathnote.jpg",
+        category:["anime"],
+        label:"Anime / Arte Coleccionable",
+        name:"Death Note – Cuadro Coleccionable",
+        description:"Misterio, inteligencia y una estética que desafía lo convencional. Una pieza para quienes encuentran fascinación en el lado más oscuro del pensamiento.",
+        price:"Q60.00",
+        stock:"Consulta disponibilidad"
+      }
 
     ];
 
+    /* CONFIGURACIÓN DE WHATSAPP */
+
     const whatsappNumber = "50234899987";
     const productsContainer = document.getElementById("products");
+
+    /* PROTECCIÓN DEL TEXTO MOSTRADO EN HTML */
 
     function escapeHTML(value) {
       return String(value).replace(/[&<>"']/g, character => ({
@@ -799,6 +820,8 @@
         "'":"&#39;"
       })[character]);
     }
+
+    /* MOSTRAR PRODUCTOS Y APLICAR FILTROS */
 
     function renderProducts(category = "todos") {
       const filteredProducts = products.filter(product =>
@@ -830,6 +853,8 @@
       }).join("");
     }
 
+    /* ACTUALIZAR FILTROS */
+
     function filterProducts(category) {
       document.querySelectorAll(".filter").forEach(button => {
         button.classList.toggle(
@@ -841,6 +866,8 @@
       renderProducts(category);
     }
 
+    /* GENERAR PEDIDO POR WHATSAPP */
+
     function order(product) {
       const message =
         `Hola YOUR STYLE, quiero consultar disponibilidad y realizar un pedido de: ${product.name}. Precio publicado: ${product.price}. ¿Me pueden confirmar existencia y opciones?`;
@@ -851,12 +878,16 @@
       window.open(url, "_blank", "noopener");
     }
 
+    /* EVENTOS DE LOS BOTONES DE FILTRO */
+
     document.querySelector(".filters").addEventListener("click", event => {
       const button = event.target.closest("[data-filter]");
       if (!button) return;
 
       filterProducts(button.dataset.filter);
     });
+
+    /* EVENTOS DE LAS CATEGORÍAS */
 
     document.querySelector(".categories").addEventListener("click", event => {
       const link = event.target.closest("[data-category-link]");
@@ -865,6 +896,8 @@
       filterProducts(link.dataset.categoryLink);
     });
 
+    /* EVENTOS DE LOS BOTONES DE PEDIDO */
+
     productsContainer.addEventListener("click", event => {
       const button = event.target.closest("[data-product-index]");
       if (!button) return;
@@ -872,6 +905,8 @@
       const product = products[Number(button.dataset.productIndex)];
       if (product) order(product);
     });
+
+    /* CARGAR EL CATÁLOGO AL ABRIR LA PÁGINA */
 
     renderProducts();
 
