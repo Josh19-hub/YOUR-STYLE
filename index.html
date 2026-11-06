@@ -429,6 +429,9 @@
 
   <script>
     const products = [
+
+      /* CATÁLOGO ANTERIOR */
+
       {
         image:"playera-west-coast-choppers-negra.jpg",
         category:["musica"],
@@ -638,7 +641,92 @@
         name:"Spider-Man",
         description:"Uno de los grandes iconos de Marvel.",
         price:"Precio por consultar"
+      },
+
+      /* NUEVOS PRODUCTOS - NOVIEMBRE 2026 */
+
+      {
+        image:"Playera-spiderman-negra .jpg",
+        category:["comics","ropa"],
+        label:"Cómics / Streetwear",
+        name:"Spider-Man – Negra",
+        description:"Una silueta icónica de Marvel, con carácter y estilo urbano.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"jugadoraBatman-negra.jpg",
+        category:["comics","ropa"],
+        label:"Cómics / Streetwear",
+        name:"Batman – Negra",
+        description:"Elegancia oscura y la presencia inconfundible del Caballero de la Noche.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"jugadora-superman-azul.jpg",
+        category:["comics","ropa"],
+        label:"Cómics / Streetwear",
+        name:"Superman – Azul",
+        description:"Un símbolo clásico de fuerza y carácter, reinterpretado en estilo urbano.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"Playera-Freezer-negra.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Freezer – Negra",
+        description:"Una presencia imponente del universo Dragon Ball, con esencia distintiva.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"playera-Goku-Collage-negra.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Goku – Collage Negro",
+        description:"La energía de un personaje legendario reunida en una composición visual.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"Playera-dragónballZ_Buu.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Dragon Ball Z – Buu",
+        description:"Una referencia inolvidable de Dragon Ball Z, para quienes aprecian su universo.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"playera-DeathNothe-negra-toquemisterioso.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Death Note – Toque Misterioso",
+        description:"Una estética enigmática donde el misterio forma parte de la identidad.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"playera-DeathNote-negra2.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Death Note – Negra II",
+        description:"Una expresión sobria y oscura inspirada en el universo de Death Note.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
+      },
+      {
+        image:"Playera-Zoro-onepeace.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Zoro – One Piece",
+        description:"Disciplina, determinación y espíritu de aventura en una sola pieza.",
+        price:"Q60.00",
+        stock:"1 unidad disponible · Talla universal"
       }
+
     ];
 
     const whatsappNumber = "50234899987";
@@ -649,7 +737,7 @@
         category === "todos" || product.category.includes(category)
       );
 
-      productsContainer.innerHTML = filteredProducts.map((product, index) => {
+      productsContainer.innerHTML = filteredProducts.map(product => {
         const originalIndex = products.indexOf(product);
 
         return `
@@ -718,6 +806,7 @@
     });
 
     renderProducts();
+
   </script>
 
 </body>
