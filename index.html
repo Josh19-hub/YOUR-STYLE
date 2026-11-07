@@ -220,6 +220,12 @@
       background:#202020;
     }
 
+    .product img.image-error {
+      object-fit:contain;
+      padding:25px;
+      opacity:.55;
+    }
+
     .product-info { padding:18px; }
 
     .product-category {
@@ -800,6 +806,126 @@
         description:"Misterio, inteligencia y una estética que desafía lo convencional. Una pieza para quienes encuentran fascinación en el lado más oscuro del pensamiento.",
         price:"Q60.00",
         stock:"Consulta disponibilidad"
+      },
+
+      /* NUEVA COLECCIÓN - NOVIEMBRE 2026 */
+
+      {
+        image:"playera-pantera rosa-negra.jpg",
+        category:["ropa"],
+        label:"Streetwear / Oversize",
+        name:"Pantera Rosa – Black Edition",
+        description:"Actitud urbana y personalidad sin filtros. La icónica Pantera Rosa se transforma en una pieza de estilo alternativo sobre fondo negro.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-panterarosa-celeste.jpg",
+        category:["ropa"],
+        label:"Streetwear / Oversize",
+        name:"Pantera Rosa – Blue Edition",
+        description:"Una combinación que destaca. Pantera Rosa en una versión celeste con toda la esencia del streetwear contemporáneo.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-panterarosa-verde.jpg",
+        category:["ropa"],
+        label:"Streetwear / Algodón",
+        name:"Pantera Rosa – Green Edition",
+        description:"Algodón 100%, comodidad y actitud urbana. Una versión en verde que rompe con lo convencional.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-oversize-corridos_negra.jpg",
+        category:["musica","ropa"],
+        label:"Música / Streetwear",
+        name:"Corridos – Black Pearl",
+        description:"Estética oscura con detalles perlados. Una pieza oversize inspirada en la identidad y el estilo de la cultura de los corridos.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-believe-david-frontal.jpg",
+        category:["ropa"],
+        label:"Arte / Streetwear",
+        name:"David – Believe Edition",
+        description:"El arte clásico se encuentra con la moda urbana. La escultura de David de Miguel Ángel protagoniza un diseño de inspiración artística.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-david-parte-dorsa.jpg",
+        category:["ropa"],
+        label:"Arte / Streetwear",
+        name:"David – Believe Edition · Back",
+        description:"Vista posterior de un diseño que fusiona arte renacentista y estética contemporánea. Una expresión visual que va más allá de lo convencional.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-mancuernas-colorcrema.jpg",
+        category:["ropa"],
+        label:"Fitness / Streetwear",
+        name:"Strength – Cream Edition",
+        description:"La fuerza también es una forma de expresión. Diseño de mancuernas en tono crema, con una estética deportiva y urbana.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-mancuernas-colorcrema3.jpg",
+        category:["ropa"],
+        label:"Fitness / Streetwear",
+        name:"Strength – Cream Edition · Back",
+        description:"Vista posterior del diseño Strength. Una propuesta que combina cultura fitness, comodidad y personalidad oversize.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-oversize-smilleshine2.jpg",
+        category:["ropa"],
+        label:"Streetwear / Oversize",
+        name:"Smile & Shine – Black Edition",
+        description:"Una sonrisa, una actitud y un estilo propio. Diseño gráfico sobre negro para quienes prefieren destacar sin seguir las reglas.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"playera-smileshine-negra.jpg",
+        category:["ropa"],
+        label:"Streetwear / Oversize",
+        name:"Smile & Shine – Black Edition · Back",
+        description:"Vista posterior de Smile & Shine. Una composición urbana que completa una propuesta llena de carácter y expresión.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"sudadero-onepeace.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"One Piece – Fusion Edition",
+        description:"El espíritu de aventura de One Piece cobra vida en una fusión de negro, rojo y beige. Una sudadera con personalidad propia para los verdaderos fans.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"sudadero-Goku-blanco.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Dragon Ball Super – Goku Blue",
+        description:"El poder Saiyajin llevado al streetwear. Goku Blue protagoniza una composición estilo historieta que transmite energía y espíritu de combate.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
+      },
+      {
+        image:"sudadero-broly-negro.jpg",
+        category:["anime","ropa"],
+        label:"Anime / Streetwear",
+        name:"Broly – Legendary Saiyan",
+        description:"Poder desatado y presencia imponente. Broly protagoniza esta fusión de tonos negros y verdes con una estética inspirada en el universo Saiyajin.",
+        price:"Precio por consultar",
+        stock:"Consulta disponibilidad · Talla universal"
       }
 
     ];
@@ -834,9 +960,10 @@
         return `
           <article class="product">
             <img
-              src="assets/${encodeURIComponent(product.image).replace(/%2F/g, "/")}"
+              src="assets/${encodeURIComponent(product.image)}"
               alt="${escapeHTML(product.name)}"
               loading="lazy"
+              onerror="this.classList.add('image-error'); this.alt='Imagen no encontrada: ${escapeHTML(product.name)}';"
             >
             <div class="product-info">
               <span class="product-category">${escapeHTML(product.label)}</span>
@@ -914,3 +1041,7 @@
 
 </body>
 </html>
+
+---
+
+Fin del archivo index.html
