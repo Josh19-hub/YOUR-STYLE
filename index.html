@@ -112,7 +112,7 @@ nav{justify-content:center;gap:15px}
 <a class="category" href="#catalogo" data-category-link="anime">ANIME & MANGA</a>
 <a class="category" href="#catalogo" data-category-link="comics">CÓMICS</a>
 <a class="category" href="#catalogo" data-category-link="musica">MÚSICA</a>
-<a class="category" href="#catalogo" data-category-link="cuadros">ARTE & CUADROS</a>
+<a class="category" href="#catalogo" data-category-link="cuadros">CUADROS & ARTE</a>
 </div>
 </section>
 
@@ -130,7 +130,7 @@ nav{justify-content:center;gap:15px}
 <button class="filter" data-filter="comics">CÓMICS</button>
 <button class="filter" data-filter="musica">MÚSICA</button>
 <button class="filter" data-filter="accesorios">ACCESORIOS</button>
-<button class="filter" data-filter="cuadros">CUADROS</button>
+<button class="filter" data-filter="cuadros">CUADROS & ARTE</button>
 </div>
 
 <div class="products" id="products"></div>
@@ -208,8 +208,8 @@ const products = [
 {image:"figura-Goku-supersaiyajin4.jpg",category:["anime"],label:"Anime / Coleccionables",name:"Goku – Super Saiyajin 4",description:"Instinto, fuerza y transformación. Una de las apariencias más legendarias de Goku.",price:"Q195.00",stock:"Consulta disponibilidad"},
 {image:"Figura-coleccionable-marvel-spiderman.jpg",category:["comics"],label:"Marvel / Coleccionables",name:"Spider-Man – Colección Marvel",description:"Un héroe que demuestra que la verdadera grandeza nace de la responsabilidad.",price:"Q95.00",stock:"Consulta disponibilidad"},
 {image:"figura-spiderman.jpg",category:["comics"],label:"Marvel / Coleccionables",name:"Spider-Man – Figura Coleccionable",description:"Agilidad, valentía y personalidad inconfundible. El trepamuros de Marvel.",price:"Q95.00",stock:"Consulta disponibilidad"},
-{image:"cuadro-coleccionable-onepeace.jpg",category:["anime"],label:"Anime / Arte Coleccionable",name:"One Piece – Cuadro Coleccionable",description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece.",price:"Q60.00",stock:"Consulta disponibilidad"},
-{image:"cuadrocoleccionable-deathnote.jpg",category:["anime"],label:"Anime / Arte Coleccionable",name:"Death Note – Cuadro Coleccionable",description:"Misterio, inteligencia y una estética que desafía lo convencional.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro-coleccionable-onepeace.jpg",category:["anime","cuadros"],label:"Anime / Arte Coleccionable",name:"One Piece – Cuadro Coleccionable",description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadrocoleccionable-deathnote.jpg",category:["anime","cuadros"],label:"Anime / Arte Coleccionable",name:"Death Note – Cuadro Coleccionable",description:"Misterio, inteligencia y una estética que desafía lo convencional.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
 /* NUEVA COLECCIÓN – NOVIEMBRE 2026 */
 
@@ -274,11 +274,9 @@ const products = [
 {image:"cuadro Naruto.jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Naruto – Anime Art",description:"Energía, determinación y esencia anime en una pieza decorativa.",price:"Q60.00",stock:"Consulta disponibilidad"},
 {image:"cuadro vegeta .jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Vegeta – Saiyan Pride",description:"Orgullo, fuerza y carácter para darle personalidad a tu espacio.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-
 /* MÚSICA */
 {image:"cuadro beatles.jpg",category:["cuadros","musica"],label:"Cuadros / Música",name:"The Beatles – Classic Art",description:"Un clásico musical que aporta historia y personalidad a cualquier rincón.",price:"Q60.00",stock:"Consulta disponibilidad"},
-{image:"cuadro Gorillaz tunel.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Tunnel Edition",description:"Una propuesta visual alternativa con identidad propia y un toque artístico.",price:"Q60.00",stock:"Consulta disponibilidad"},
-
+{image:"cuadro Gorillaz tunel.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Tunnel Edition",description:"Una propuesta visual alternativa con identidad propia y un toque artístico.",price:"Q60.00",stock:"Consulta disponibilidad"}
 
 ];
 
