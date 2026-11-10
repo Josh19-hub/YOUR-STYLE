@@ -9,7 +9,7 @@
 <title>YOUR STYLE | Beyond the Surface</title>
 
 <style>
-:root {
+:root{
   --bg:#090909;
   --surface:#141414;
   --text:#f4f0ed;
@@ -17,19 +17,18 @@
   --accent:#c9a46a;
   --line:#303030;
 }
-
-* {box-sizing:border-box;margin:0;padding:0}
-html {scroll-behavior:smooth}
-body {
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
   background:var(--bg);
   color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
   line-height:1.6;
 }
-a {color:inherit;text-decoration:none}
-button {font:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
 
-header {
+header{
   min-height:76px;
   padding:18px 7%;
   display:flex;
@@ -39,49 +38,37 @@ header {
   border-bottom:1px solid var(--line);
   background:#090909;
 }
-.logo {font-size:25px;font-weight:900;letter-spacing:4px}
-.logo span,.hero h1 span,.manifesto h2 span {color:var(--accent)}
+.logo{font-size:25px;font-weight:900;letter-spacing:4px}
+.logo span,.hero h1 span,.manifesto h2 span{color:var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--accent)}
 
-nav {
-  display:flex;
-  flex-wrap:wrap;
-  gap:24px;
-  font-size:13px;
-  color:var(--muted);
-}
-nav a:hover {color:var(--accent)}
-
-.hero {
+.hero{
   min-height:490px;
   padding:90px 8%;
   display:flex;
   align-items:center;
   background:
-    radial-gradient(ellipse at 80% 40%,#3b3025 0%,transparent 35%),
-    linear-gradient(110deg,#080808 35%,#17130f 100%);
+  radial-gradient(ellipse at 80% 40%,#3b3025 0%,transparent 35%),
+  linear-gradient(110deg,#080808 35%,#17130f 100%);
   border-bottom:1px solid var(--line);
 }
-.hero-content {max-width:680px}
-.eyebrow {
+.hero-content{max-width:680px}
+.eyebrow{
   color:var(--accent);
   letter-spacing:5px;
   font-size:11px;
   font-weight:bold;
   margin-bottom:18px;
 }
-.hero h1 {
+.hero h1{
   font-size:clamp(42px,8vw,82px);
   line-height:.98;
   letter-spacing:-3px;
   margin-bottom:25px;
 }
-.hero p {
-  color:#c2bdb8;
-  max-width:470px;
-  margin-bottom:30px;
-  font-size:16px;
-}
-.button {
+.hero p{color:#c2bdb8;max-width:470px;margin-bottom:30px;font-size:16px}
+.button{
   display:inline-block;
   padding:13px 25px;
   background:var(--accent);
@@ -92,32 +79,21 @@ nav a:hover {color:var(--accent)}
   letter-spacing:1px;
   transition:.25s;
 }
-.button:hover {background:transparent;color:var(--accent)}
+.button:hover{background:transparent;color:var(--accent)}
 
-section {padding:70px 7%}
-.section-heading {margin-bottom:30px}
-.section-heading small {
+section{padding:70px 7%}
+.section-heading{margin-bottom:30px}
+.section-heading small{
   color:var(--accent);
   letter-spacing:3px;
   font-size:10px;
   font-weight:bold;
 }
-.section-heading h2 {
-  font-size:clamp(27px,5vw,38px);
-  margin-top:7px;
-}
-.section-heading p {
-  color:var(--muted);
-  font-size:14px;
-  margin-top:8px;
-}
+.section-heading h2{font-size:clamp(27px,5vw,38px);margin-top:7px}
+.section-heading p{color:var(--muted);font-size:14px;margin-top:8px}
 
-.categories {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-.category {
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.category{
   min-height:100px;
   padding:22px 12px;
   background:var(--surface);
@@ -131,95 +107,62 @@ section {padding:70px 7%}
   letter-spacing:2px;
   transition:.25s;
 }
-.category:hover {
-  border-color:var(--accent);
-  color:var(--accent);
-  transform:translateY(-3px);
-}
+.category:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
 
-.catalog {background:#0d0d0d}
-.filters {
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-bottom:30px;
-}
-.filter {
+.catalog{background:#0d0d0d}
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+.filter{
   background:transparent;
   color:var(--muted);
   border:1px solid var(--line);
   padding:9px 16px;
   font-size:12px;
 }
-.filter.active,.filter:hover {
+.filter.active,.filter:hover{
   background:var(--accent);
   color:#111;
   border-color:var(--accent);
 }
 
-.products {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-}
-.product {
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.product{
   background:var(--surface);
   border:1px solid var(--line);
   overflow:hidden;
   transition:.25s;
 }
-.product:hover {
-  border-color:#786344;
-  transform:translateY(-4px);
-}
-
-/* GALERÍA DE FOTOGRAFÍAS */
-.product-gallery {
+.product:hover{border-color:#786344;transform:translateY(-4px)}
+.product-gallery{
   display:grid;
   grid-template-columns:1fr;
   gap:2px;
   background:#202020;
 }
-.product-gallery.multiple {
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-.product-gallery img {
+.product-gallery.multiple{grid-template-columns:repeat(2,minmax(0,1fr))}
+.product-gallery img{
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
   display:block;
   background:#202020;
 }
-.product-gallery img.image-error {
+.product-gallery img.image-error{
   object-fit:contain;
-  padding:25px;
+  padding:20px;
   opacity:.55;
 }
-
-.product-info {padding:18px}
-.product-category {
+.product-info{padding:18px}
+.product-category{
   color:var(--accent);
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.product h3 {font-size:17px;margin:7px 0}
-.product p {
-  font-size:12px;
-  color:var(--muted);
-  margin-bottom:12px;
-}
-.price {
-  font-size:18px;
-  font-weight:bold;
-  margin:0 0 8px;
-}
-.stock {
-  color:#b6c99c;
-  font-size:11px;
-  margin-bottom:14px;
-}
-.order-button {
+.product h3{font-size:17px;margin:7px 0}
+.product p{font-size:12px;color:var(--muted);margin-bottom:12px}
+.price{font-size:18px;font-weight:bold;margin:0 0 8px}
+.stock{color:#b6c99c;font-size:11px;margin-bottom:14px}
+.order-button{
   display:block;
   width:100%;
   padding:11px;
@@ -231,35 +174,20 @@ section {padding:70px 7%}
   letter-spacing:1px;
   text-align:center;
 }
-.order-button:hover {
-  background:var(--accent);
-  color:#111;
-}
+.order-button:hover{background:var(--accent);color:#111}
 
-.contact {text-align:center}
-.contact p {
-  color:var(--muted);
-  margin:12px auto 25px;
-  font-size:14px;
-}
-.manifesto {
+.contact{text-align:center}
+.contact p{color:var(--muted);margin:12px auto 25px;font-size:14px}
+.manifesto{
   text-align:center;
   background:radial-gradient(ellipse at center,#211b15 0%,#090909 70%);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
-.manifesto h2 {
-  font-size:clamp(26px,5vw,43px);
-  letter-spacing:2px;
-  margin-bottom:15px;
-}
-.manifesto p {
-  max-width:600px;
-  margin:auto;
-  color:var(--muted);
-  font-size:14px;
-}
-footer {
+.manifesto h2{font-size:clamp(26px,5vw,43px);letter-spacing:2px;margin-bottom:15px}
+.manifesto p{max-width:600px;margin:auto;color:var(--muted);font-size:14px}
+
+footer{
   padding:28px 7%;
   border-top:1px solid var(--line);
   color:var(--muted);
@@ -267,7 +195,7 @@ footer {
   font-size:11px;
   letter-spacing:1px;
 }
-.whatsapp {
+.whatsapp{
   position:fixed;
   right:20px;
   bottom:20px;
@@ -281,20 +209,17 @@ footer {
   box-shadow:0 5px 20px #0008;
 }
 
-@media(max-width:750px) {
-  header {flex-direction:column}
-  nav {justify-content:center;gap:15px}
-  .hero {min-height:420px;padding:70px 7%}
-  .categories {grid-template-columns:repeat(2,1fr)}
-  .products {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-  }
-  .product-info {padding:12px}
-  .product h3 {font-size:14px}
+@media(max-width:750px){
+  header{flex-direction:column}
+  nav{justify-content:center;gap:15px}
+  .hero{min-height:420px;padding:70px 7%}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .product-info{padding:12px}
+  .product h3{font-size:14px}
 }
-@media(max-width:390px) {
-  .products {grid-template-columns:1fr}
+@media(max-width:390px){
+  .products{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -328,6 +253,7 @@ footer {
     <h2>Categorías</h2>
     <p>Encuentra aquello que conecta con tu esencia.</p>
   </div>
+
   <div class="categories">
     <a class="category" href="#catalogo" data-category-link="ropa">ROPA / STREETWEAR</a>
     <a class="category" href="#catalogo" data-category-link="anime">ANIME & MANGA</a>
@@ -389,756 +315,640 @@ const products = [
 /* CATÁLOGO ANTERIOR */
 
 {
-image:"playera-west-coast-choppers-negra.jpg",
-category:["musica"],
-label:"Música / Streetwear",
-name:"West Coast Choppers",
-description:"Playera negra de inspiración biker y cultura custom.",
-price:"Q60.00"
+ image:"playera-west-coast-choppers-negra.jpg",
+ category:["musica"],
+ label:"Música / Streetwear",
+ name:"West Coast Choppers",
+ description:"Playera negra de inspiración biker y cultura custom.",
+ price:"Q60.00"
 },
 {
-image:"playera-pink-floyd-the-wall-negra.jpg",
-category:["musica"],
-label:"Música",
-name:"Pink Floyd – The Wall",
-description:"Un clásico del rock para llevar tu identidad musical.",
-price:"Q60.00"
+ image:"playera-pink-floyd-the-wall-negra.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"Pink Floyd – The Wall",
+ description:"Un clásico del rock para llevar tu identidad musical.",
+ price:"Q60.00"
 },
 {
-image:"playera-gorillaz-negra.jpg",
-category:["musica"],
-label:"Música",
-name:"Gorillaz",
-description:"Arte, música y personalidad alternativa.",
-price:"Q60.00"
+ image:"playera-gorillaz-negra.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"Gorillaz",
+ description:"Arte, música y personalidad alternativa.",
+ price:"Q60.00"
 },
 {
-image:"playera-nwa-greatest-hits.jpg",
-category:["musica"],
-label:"Música",
-name:"N.W.A – Greatest Hits",
-description:"Una referencia esencial del hip-hop.",
-price:"Q60.00"
+ image:"playera-nwa-greatest-hits.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"N.W.A – Greatest Hits",
+ description:"Una referencia esencial del hip-hop.",
+ price:"Q60.00"
 },
 {
-image:"playera-nwa-frente-blanco.jpg",
-category:["musica"],
-label:"Música",
-name:"N.W.A – Diseño clásico",
-description:"Diseño con impresión frontal y posterior.",
-price:"Q60.00"
+ image:"playera-nwa-frente-blanco.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"N.W.A – Diseño clásico",
+ description:"Diseño con impresión frontal y posterior.",
+ price:"Q60.00"
 },
 {
-image:"playera-nwa-frente-rojo.jpg",
-category:["musica"],
-label:"Música",
-name:"N.W.A – Variante roja",
-description:"Otra vista del diseño N.W.A; confirma variante y disponibilidad.",
-price:"Q60.00"
+ image:"playera-nwa-frente-rojo.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"N.W.A – Variante roja",
+ description:"Otra vista del diseño N.W.A; confirma variante y disponibilidad.",
+ price:"Q60.00"
 },
 {
-image:"playera-tupac-oversize-negra.jpg",
-category:["musica","ropa"],
-label:"Música / Oversize",
-name:"Tupac – Oversize Collection",
-description:"Colores disponibles por confirmar: negro, vino, azul, gris y blanco.",
-price:"Q75.00",
-stock:"Consulta el color disponible"
+ image:"playera-tupac-oversize-negra.jpg",
+ category:["musica","ropa"],
+ label:"Música / Oversize",
+ name:"Tupac – Oversize Collection",
+ description:"Colores disponibles por confirmar: negro, vino, azul, gris y blanco.",
+ price:"Q75.00",
+ stock:"Consulta el color disponible"
 },
 {
-image:"playera-tupac-oversize-colores-disponibles.jpg",
-category:["musica","ropa"],
-label:"Música / Oversize",
-name:"Tupac – Colores disponibles",
-description:"Imagen de referencia de las variantes de color de la colección.",
-price:"Q75.00",
-stock:"Confirma tu color por WhatsApp"
+ image:"playera-tupac-oversize-colores-disponibles.jpg",
+ category:["musica","ropa"],
+ label:"Música / Oversize",
+ name:"Tupac – Colores disponibles",
+ description:"Imagen de referencia de las variantes de color de la colección.",
+ price:"Q75.00",
+ stock:"Confirma tu color por WhatsApp"
 },
 {
-image:"playera-dragon-ball-goku-neon-negra.jpg",
-category:["anime"],
-label:"Anime",
-name:"Dragon Ball – Goku Neón",
-description:"Diseño inspirado en uno de los grandes iconos del anime.",
-price:"Q60.00"
+ image:"playera-dragon-ball-goku-neon-negra.jpg",
+ category:["anime"],
+ label:"Anime",
+ name:"Dragon Ball – Goku Neón",
+ description:"Diseño inspirado en uno de los grandes iconos del anime.",
+ price:"Q60.00"
 },
 {
-image:"playera-dragon-ball-goku-simbolo-negra.jpg",
-category:["anime"],
-label:"Anime",
-name:"Dragon Ball – Goku",
-description:"Playera de algodón con diseño frontal y posterior.",
-price:"Q75.00"
+ image:"playera-dragon-ball-goku-simbolo-negra.jpg",
+ category:["anime"],
+ label:"Anime",
+ name:"Dragon Ball – Goku",
+ description:"Playera de algodón con diseño frontal y posterior.",
+ price:"Q75.00"
 },
 {
-image:"playera-dragon-ball-goku-naranja-negra.jpg",
-category:["anime"],
-label:"Anime",
-name:"Dragon Ball – Goku Naranja",
-description:"Consulta precio y disponibilidad de esta variante.",
-price:"Precio por consultar"
+ image:"playera-dragon-ball-goku-naranja-negra.jpg",
+ category:["anime"],
+ label:"Anime",
+ name:"Dragon Ball – Goku Naranja",
+ description:"Consulta precio y disponibilidad de esta variante.",
+ price:"Precio por consultar"
 },
 {
-image:"playera-deadpool-roja.jpg",
-category:["comics"],
-label:"Cómics",
-name:"Deadpool",
-description:"Actitud irreverente y cultura de cómics.",
-price:"Q60.00"
+ image:"playera-deadpool-roja.jpg",
+ category:["comics"],
+ label:"Cómics",
+ name:"Deadpool",
+ description:"Actitud irreverente y cultura de cómics.",
+ price:"Q60.00"
 },
 {
-image:"playera-oh-shit-oversize-azul.jpg",
-category:["ropa"],
-label:"Ropa / Oversize",
-name:"Oh! Sh*t – Oversize",
-description:"Diseño gráfico en tono azul, con corte oversize.",
-price:"Q100.00"
+ image:"playera-oh-shit-oversize-azul.jpg",
+ category:["ropa"],
+ label:"Ropa / Oversize",
+ name:"Oh! Sh*t – Oversize",
+ description:"Diseño gráfico en tono azul, con corte oversize.",
+ price:"Q100.00"
 },
 {
-image:"accesorios-calaveras-conjunto.jpg",
-category:["accesorios"],
-label:"Accesorios",
-name:"Conjunto de calaveras",
-description:"Diseños disponibles en blanco/negro y rojo/negro. Pieza individual Q30.",
-price:"Combo Q60.00"
+ image:"accesorios-calaveras-conjunto.jpg",
+ category:["accesorios"],
+ label:"Accesorios",
+ name:"Conjunto de calaveras",
+ description:"Diseños disponibles en blanco/negro y rojo/negro. Pieza individual Q30.",
+ price:"Combo Q60.00"
 },
 {
-image:"accesorio-mangas-calaveras-blanco-negro.jpg",
-category:["accesorios"],
-label:"Accesorios",
-name:"Mangas de calaveras – Blanco/negro",
-description:"Accesorio de talla universal por el momento.",
-price:"Q30.00"
+ image:"accesorio-mangas-calaveras-blanco-negro.jpg",
+ category:["accesorios"],
+ label:"Accesorios",
+ name:"Mangas de calaveras – Blanco/negro",
+ description:"Accesorio de talla universal por el momento.",
+ price:"Q30.00"
 },
 {
-image:"accesorio-mangas-calaveras-rojo-negro.jpg",
-category:["accesorios"],
-label:"Accesorios",
-name:"Mangas de calaveras – Rojo/negro",
-description:"Accesorio de talla universal por el momento.",
-price:"Q30.00"
+ image:"accesorio-mangas-calaveras-rojo-negro.jpg",
+ category:["accesorios"],
+ label:"Accesorios",
+ name:"Mangas de calaveras – Rojo/negro",
+ description:"Accesorio de talla universal por el momento.",
+ price:"Q30.00"
 },
 {
-image:"accesorio-calaveras-blanco-negro-detalle.jpg",
-category:["accesorios"],
-label:"Accesorios",
-name:"Accesorio de calaveras – Detalle",
-description:"Vista de detalle del diseño blanco y negro.",
-price:"Q30.00"
+ image:"accesorio-calaveras-blanco-negro-detalle.jpg",
+ category:["accesorios"],
+ label:"Accesorios",
+ name:"Accesorio de calaveras – Detalle",
+ description:"Vista de detalle del diseño blanco y negro.",
+ price:"Q30.00"
 },
 {
-image:"accesorios-motorista.jpg",
-category:["accesorios"],
-label:"Accesorios",
-name:"Accesorios motorista",
-description:"Estilo y personalidad para quienes viven sobre ruedas.",
-price:"Precio por consultar"
+ image:"accesorios-motorista.jpg",
+ category:["accesorios"],
+ label:"Accesorios",
+ name:"Accesorios motorista",
+ description:"Estilo y personalidad para quienes viven sobre ruedas.",
+ price:"Precio por consultar"
 },
 {
-image:"beatles.jpg",
-category:["musica"],
-label:"Música",
-name:"The Beatles",
-description:"Un clásico que trasciende generaciones.",
-price:"Precio por consultar"
+ image:"beatles.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"The Beatles",
+ description:"Un clásico que trasciende generaciones.",
+ price:"Precio por consultar"
 },
 {
-image:"deadpool.jpg",
-category:["comics"],
-label:"Cómics",
-name:"Deadpool – Diseño anterior",
-description:"Una versión del irreverente personaje de Marvel.",
-price:"Precio por consultar"
+ image:"deadpool.jpg",
+ category:["comics"],
+ label:"Cómics",
+ name:"Deadpool – Diseño anterior",
+ description:"Una versión del irreverente personaje de Marvel.",
+ price:"Precio por consultar"
 },
 {
-image:"goku.jpg",
-category:["anime"],
-label:"Anime",
-name:"Dragon Ball – Goku clásico",
-description:"El diseño anterior de uno de los grandes iconos del anime.",
-price:"Precio por consultar"
+ image:"goku.jpg",
+ category:["anime"],
+ label:"Anime",
+ name:"Dragon Ball – Goku clásico",
+ description:"El diseño anterior de uno de los grandes iconos del anime.",
+ price:"Precio por consultar"
 },
 {
-image:"led-zeppelin.jpg",
-category:["musica"],
-label:"Música",
-name:"Led Zeppelin",
-description:"Rock, historia y energía.",
-price:"Precio por consultar"
+ image:"led-zeppelin.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"Led Zeppelin",
+ description:"Rock, historia y energía.",
+ price:"Precio por consultar"
 },
 {
-image:"luffy.jpg",
-category:["anime"],
-label:"Anime",
-name:"One Piece – Luffy",
-description:"La aventura continúa.",
-price:"Precio por consultar"
+ image:"luffy.jpg",
+ category:["anime"],
+ label:"Anime",
+ name:"One Piece – Luffy",
+ description:"La aventura continúa.",
+ price:"Precio por consultar"
 },
 {
-image:"nirvana.jpg",
-category:["musica"],
-label:"Música",
-name:"Nirvana",
-description:"Espíritu alternativo y esencia grunge.",
-price:"Precio por consultar"
+ image:"nirvana.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"Nirvana",
+ description:"Espíritu alternativo y esencia grunge.",
+ price:"Precio por consultar"
 },
 {
-image:"pink-floyd.jpg",
-category:["musica"],
-label:"Música",
-name:"Pink Floyd – Diseño anterior",
-description:"Una experiencia musical fuera de lo convencional.",
-price:"Precio por consultar"
+ image:"pink-floyd.jpg",
+ category:["musica"],
+ label:"Música",
+ name:"Pink Floyd – Diseño anterior",
+ description:"Una experiencia musical fuera de lo convencional.",
+ price:"Precio por consultar"
 },
 {
-image:"spiderman.jpg",
-category:["comics"],
-label:"Cómics",
-name:"Spider-Man",
-description:"Uno de los grandes iconos de Marvel.",
-price:"Precio por consultar"
+ image:"spiderman.jpg",
+ category:["comics"],
+ label:"Cómics",
+ name:"Spider-Man",
+ description:"Uno de los grandes iconos de Marvel.",
+ price:"Precio por consultar"
 },
 
 /* COLECCIÓN DE ROPA - NOVIEMBRE 2026 */
 
 {
-image:"Playera-spiderman-negra .jpg",
-category:["comics","ropa"],
-label:"Cómics / Streetwear",
-name:"Spider-Man – Negra",
-description:"Una silueta icónica de Marvel, con carácter y estilo urbano.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"Playera-spiderman-negra .jpg",
+ category:["comics","ropa"],
+ label:"Cómics / Streetwear",
+ name:"Spider-Man – Negra",
+ description:"Una silueta icónica de Marvel, con carácter y estilo urbano.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"playeraBatman-negra.jpg",
-category:["comics","ropa"],
-label:"Cómics / Streetwear",
-name:"Batman – Negra",
-description:"Elegancia oscura y la presencia inconfundible del Caballero de la Noche.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"playeraBatman-negra.jpg",
+ category:["comics","ropa"],
+ label:"Cómics / Streetwear",
+ name:"Batman – Negra",
+ description:"Elegancia oscura y la presencia inconfundible del Caballero de la Noche.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"playera-superman-azul.jpg",
-category:["comics","ropa"],
-label:"Cómics / Streetwear",
-name:"Superman – Azul",
-description:"Un símbolo clásico de fuerza y carácter, reinterpretado en estilo urbano.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"playera-superman-azul.jpg",
+ category:["comics","ropa"],
+ label:"Cómics / Streetwear",
+ name:"Superman – Azul",
+ description:"Un símbolo clásico de fuerza y carácter, reinterpretado en estilo urbano.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"Playera-Freezer-negra.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Freezer – Negra",
-description:"Una presencia imponente del universo Dragon Ball, con esencia distintiva.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"Playera-Freezer-negra.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Freezer – Negra",
+ description:"Una presencia imponente del universo Dragon Ball, con esencia distintiva.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"playera-Goku-Collage-negra.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Goku – Collage Negro",
-description:"La energía de un personaje legendario reunida en una composición visual.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"playera-Goku-Collage-negra.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Goku – Collage Negro",
+ description:"La energía de un personaje legendario reunida en una composición visual.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"Playera-dragónballZ_Buu.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Dragon Ball Z – Buu",
-description:"Una referencia inolvidable de Dragon Ball Z, para quienes aprecian su universo.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"Playera-dragónballZ_Buu.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Dragon Ball Z – Buu",
+ description:"Una referencia inolvidable de Dragon Ball Z, para quienes aprecian su universo.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"playera-DeathNothe-negra-toquemisterioso.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Death Note – Toque Misterioso",
-description:"Una estética enigmática donde el misterio forma parte de la identidad.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"playera-DeathNothe-negra-toquemisterioso.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Death Note – Toque Misterioso",
+ description:"Una estética enigmática donde el misterio forma parte de la identidad.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"playera-DeathNote-negra2.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Death Note – Negra II",
-description:"Una expresión sobria y oscura inspirada en el universo de Death Note.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"playera-DeathNote-negra2.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Death Note – Negra II",
+ description:"Una expresión sobria y oscura inspirada en el universo de Death Note.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 {
-image:"Playera-Zoro-onepeace.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Zoro – One Piece",
-description:"Disciplina, determinación y espíritu de aventura en una sola pieza.",
-price:"Q60.00",
-stock:"1 unidad disponible · Talla universal"
+ image:"Playera-Zoro-onepeace.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Zoro – One Piece",
+ description:"Disciplina, determinación y espíritu de aventura en una sola pieza.",
+ price:"Q60.00",
+ stock:"1 unidad disponible · Talla universal"
 },
 
 /* FIGURAS Y CUADROS COLECCIONABLES */
 
 {
-image:"figura-colección-vegeta-principe.jpg",
-category:["anime"],
-label:"Anime / Coleccionables",
-name:"Vegeta – El Príncipe Saiyajin",
-description:"Orgullo, disciplina y espíritu indomable. El príncipe de los Saiyajin representa la fuerza de quien nunca acepta estar por debajo de sus propios límites.",
-price:"Q195.00",
-stock:"Consulta disponibilidad"
+ image:"figura-colección-vegeta-principe.jpg",
+ category:["anime"],
+ label:"Anime / Coleccionables",
+ name:"Vegeta – El Príncipe Saiyajin",
+ description:"Orgullo, disciplina y espíritu indomable. El príncipe de los Saiyajin representa la fuerza de quien nunca acepta estar por debajo de sus propios límites.",
+ price:"Q195.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"Figura-Freezer.jpg",
-category:["anime"],
-label:"Anime / Coleccionables",
-name:"Freezer – Emperador del Universo",
-description:"Poder, elegancia y dominio absoluto. Una figura inspirada en uno de los antagonistas más emblemáticos de Dragon Ball.",
-price:"Q95.00",
-stock:"Consulta disponibilidad"
+ image:"Figura-Freezer.jpg",
+ category:["anime"],
+ label:"Anime / Coleccionables",
+ name:"Freezer – Emperador del Universo",
+ description:"Poder, elegancia y dominio absoluto. Una figura inspirada en uno de los antagonistas más emblemáticos de Dragon Ball.",
+ price:"Q95.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"figura-frezeer-reconstruido.jpg",
-category:["anime"],
-label:"Anime / Coleccionables",
-name:"Freezer – Reconstruido",
-description:"La derrota no siempre significa el final. Una versión reconstruida que representa ambición, resistencia y sed de poder.",
-price:"Q115.00",
-stock:"Consulta disponibilidad"
+ image:"figura-frezeer-reconstruido.jpg",
+ category:["anime"],
+ label:"Anime / Coleccionables",
+ name:"Freezer – Reconstruido",
+ description:"La derrota no siempre significa el final. Una versión reconstruida que representa ambición, resistencia y sed de poder.",
+ price:"Q115.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"figura-Goku-supersaiyajin4.jpg",
-category:["anime"],
-label:"Anime / Coleccionables",
-name:"Goku – Super Saiyajin 4",
-description:"Instinto, fuerza y transformación. Una de las apariencias más legendarias de Goku, símbolo de poder y evolución.",
-price:"Q195.00",
-stock:"Consulta disponibilidad"
+ image:"figura-Goku-supersaiyajin4.jpg",
+ category:["anime"],
+ label:"Anime / Coleccionables",
+ name:"Goku – Super Saiyajin 4",
+ description:"Instinto, fuerza y transformación. Una de las apariencias más legendarias de Goku, símbolo de poder y evolución.",
+ price:"Q195.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"Figura-coleccionable-marvel-spiderman.jpg",
-category:["comics"],
-label:"Marvel / Coleccionables",
-name:"Spider-Man – Colección Marvel",
-description:"Un héroe que demuestra que la verdadera grandeza nace de la responsabilidad. Una pieza para quienes llevan el universo Marvel en su esencia.",
-price:"Q95.00",
-stock:"Consulta disponibilidad"
+ image:"Figura-coleccionable-marvel-spiderman.jpg",
+ category:["comics"],
+ label:"Marvel / Coleccionables",
+ name:"Spider-Man – Colección Marvel",
+ description:"Un héroe que demuestra que la verdadera grandeza nace de la responsabilidad. Una pieza para quienes llevan el universo Marvel en su esencia.",
+ price:"Q95.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"figura-spiderman.jpg",
-category:["comics"],
-label:"Marvel / Coleccionables",
-name:"Spider-Man – Figura Coleccionable",
-description:"Agilidad, valentía y personalidad inconfundible. El trepamuros de Marvel, listo para formar parte de tu universo.",
-price:"Q95.00",
-stock:"Consulta disponibilidad"
+ image:"figura-spiderman.jpg",
+ category:["comics"],
+ label:"Marvel / Coleccionables",
+ name:"Spider-Man – Figura Coleccionable",
+ description:"Agilidad, valentía y personalidad inconfundible. El trepamuros de Marvel, listo para formar parte de tu universo.",
+ price:"Q95.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"cuadro-coleccionable-onepeace.jpg",
-category:["anime"],
-label:"Anime / Arte Coleccionable",
-name:"One Piece – Cuadro Coleccionable",
-description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece y en quienes nunca dejan de perseguir su aventura.",
-price:"Q60.00",
-stock:"Consulta disponibilidad"
+ image:"cuadro-coleccionable-onepeace.jpg",
+ category:["anime"],
+ label:"Anime / Arte Coleccionable",
+ name:"One Piece – Cuadro Coleccionable",
+ description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece y en quienes nunca dejan de perseguir su aventura.",
+ price:"Q60.00",
+ stock:"Consulta disponibilidad"
 },
 {
-image:"cuadrocoleccionable-deathnote.jpg",
-category:["anime"],
-label:"Anime / Arte Coleccionable",
-name:"Death Note – Cuadro Coleccionable",
-description:"Misterio, inteligencia y una estética que desafía lo convencional. Una pieza para quienes encuentran fascinación en el lado más oscuro del pensamiento.",
-price:"Q60.00",
-stock:"Consulta disponibilidad"
+ image:"cuadrocoleccionable-deathnote.jpg",
+ category:["anime"],
+ label:"Anime / Arte Coleccionable",
+ name:"Death Note – Cuadro Coleccionable",
+ description:"Misterio, inteligencia y una estética que desafía lo convencional. Una pieza para quienes encuentran fascinación en el lado más oscuro del pensamiento.",
+ price:"Q60.00",
+ stock:"Consulta disponibilidad"
 },
 
 /* NUEVA COLECCIÓN - NOVIEMBRE 2026 */
 
 {
-image:"playera-pantera rosa-negra.jpg",
-category:["ropa"],
-label:"Streetwear / Oversize",
-name:"Pantera Rosa – Black Edition",
-description:"Actitud urbana y personalidad sin filtros. La icónica Pantera Rosa se transforma en una pieza de estilo alternativo sobre fondo negro.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-pantera rosa-negra.jpg",
+ category:["ropa"],
+ label:"Streetwear / Oversize",
+ name:"Pantera Rosa – Black Edition",
+ description:"Actitud urbana y personalidad sin filtros. La icónica Pantera Rosa se transforma en una pieza de estilo alternativo sobre fondo negro.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-panterarosa-celeste.jpg",
-category:["ropa"],
-label:"Streetwear / Oversize",
-name:"Pantera Rosa – Blue Edition",
-description:"Una combinación que destaca. Pantera Rosa en una versión celeste con toda la esencia del streetwear contemporáneo.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-panterarosa-celeste.jpg",
+ category:["ropa"],
+ label:"Streetwear / Oversize",
+ name:"Pantera Rosa – Blue Edition",
+ description:"Una combinación que destaca. Pantera Rosa en una versión celeste con toda la esencia del streetwear contemporáneo.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-panterarosa-verde.jpg",
-category:["ropa"],
-label:"Streetwear / Algodón",
-name:"Pantera Rosa – Green Edition",
-description:"Algodón 100%, comodidad y actitud urbana. Una versión en verde que rompe con lo convencional.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-panterarosa-verde.jpg",
+ category:["ropa"],
+ label:"Streetwear / Algodón",
+ name:"Pantera Rosa – Green Edition",
+ description:"Algodón 100%, comodidad y actitud urbana. Una versión en verde que rompe con lo convencional.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-oversize-corridos_negra.jpg",
-category:["musica","ropa"],
-label:"Música / Streetwear",
-name:"Corridos – Black Pearl",
-description:"Estética oscura con detalles perlados. Una pieza oversize inspirada en la identidad y el estilo de la cultura de los corridos.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-oversize-corridos_negra.jpg",
+ category:["musica","ropa"],
+ label:"Música / Streetwear",
+ name:"Corridos – Black Pearl",
+ description:"Estética oscura con detalles perlados. Una pieza oversize inspirada en la identidad y el estilo de la cultura de los corridos.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-believe-david-frontal.jpg",
-category:["ropa"],
-label:"Arte / Streetwear",
-name:"David – Believe Edition",
-description:"El arte clásico se encuentra con la moda urbana. La escultura de David de Miguel Ángel protagoniza un diseño de inspiración artística.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-believe-david-frontal.jpg",
+ category:["ropa"],
+ label:"Arte / Streetwear",
+ name:"David – Believe Edition",
+ description:"El arte clásico se encuentra con la moda urbana. La escultura de David de Miguel Ángel protagoniza un diseño de inspiración artística.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-david-parte-dorsa.jpg",
-category:["ropa"],
-label:"Arte / Streetwear",
-name:"David – Believe Edition · Back",
-description:"Vista posterior de un diseño que fusiona arte renacentista y estética contemporánea. Una expresión visual que va más allá de lo convencional.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-david-parte-dorsa.jpg",
+ category:["ropa"],
+ label:"Arte / Streetwear",
+ name:"David – Believe Edition · Back",
+ description:"Vista posterior de un diseño que fusiona arte renacentista y estética contemporánea. Una expresión visual que va más allá de lo convencional.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-mancuernas-colorcrema.jpg",
-category:["ropa"],
-label:"Fitness / Streetwear",
-name:"Strength – Cream Edition",
-description:"La fuerza también es una forma de expresión. Diseño de mancuernas en tono crema, con una estética deportiva y urbana.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-mancuernas-colorcrema.jpg",
+ category:["ropa"],
+ label:"Fitness / Streetwear",
+ name:"Strength – Cream Edition",
+ description:"La fuerza también es una forma de expresión. Diseño de mancuernas en tono crema, con una estética deportiva y urbana.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-mancuernas-colorcrema3.jpg",
-category:["ropa"],
-label:"Fitness / Streetwear",
-name:"Strength – Cream Edition · Back",
-description:"Vista posterior del diseño Strength. Una propuesta que combina cultura fitness, comodidad y personalidad oversize.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-mancuernas-colorcrema3.jpg",
+ category:["ropa"],
+ label:"Fitness / Streetwear",
+ name:"Strength – Cream Edition · Back",
+ description:"Vista posterior del diseño Strength. Una propuesta que combina cultura fitness, comodidad y personalidad oversize.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-oversize-smilleshine2.jpg",
-category:["ropa"],
-label:"Streetwear / Oversize",
-name:"Smile & Shine – Black Edition",
-description:"Una sonrisa, una actitud y un estilo propio. Diseño gráfico sobre negro para quienes prefieren destacar sin seguir las reglas.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-oversize-smilleshine2.jpg",
+ category:["ropa"],
+ label:"Streetwear / Oversize",
+ name:"Smile & Shine – Black Edition",
+ description:"Una sonrisa, una actitud y un estilo propio. Diseño gráfico sobre negro para quienes prefieren destacar sin seguir las reglas.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"playera-smileshine-negra.jpg",
-category:["ropa"],
-label:"Streetwear / Oversize",
-name:"Smile & Shine – Black Edition · Back",
-description:"Vista posterior de Smile & Shine. Una composición urbana que completa una propuesta llena de carácter y expresión.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"playera-smileshine-negra.jpg",
+ category:["ropa"],
+ label:"Streetwear / Oversize",
+ name:"Smile & Shine – Black Edition · Back",
+ description:"Vista posterior de Smile & Shine. Una composición urbana que completa una propuesta llena de carácter y expresión.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"sudadero-onepeace.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"One Piece – Fusion Edition",
-description:"El espíritu de aventura de One Piece cobra vida en una fusión de negro, rojo y beige. Una sudadera con personalidad propia para los verdaderos fans.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"sudadero-onepeace.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"One Piece – Fusion Edition",
+ description:"El espíritu de aventura de One Piece cobra vida en una fusión de negro, rojo y beige. Una sudadera con personalidad propia para los verdaderos fans.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"sudadero-Goku-blanco.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Dragon Ball Super – Goku Blue",
-description:"El poder Saiyajin llevado al streetwear. Goku Blue protagoniza una composición estilo historieta que transmite energía y espíritu de combate.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"sudadero-Goku-blanco.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Dragon Ball Super – Goku Blue",
+ description:"El poder Saiyajin llevado al streetwear. Goku Blue protagoniza una composición estilo historieta que transmite energía y espíritu de combate.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 {
-image:"sudadero-broly-negro.jpg",
-category:["anime","ropa"],
-label:"Anime / Streetwear",
-name:"Broly – Legendary Saiyan",
-description:"Poder desatado y presencia imponente. Broly protagoniza esta fusión de tonos negros y verdes con una estética inspirada en el universo Saiyajin.",
-price:"Precio por consultar",
-stock:"Consulta disponibilidad · Talla universal"
+ image:"sudadero-broly-negro.jpg",
+ category:["anime","ropa"],
+ label:"Anime / Streetwear",
+ name:"Broly – Legendary Saiyan",
+ description:"Poder desatado y presencia imponente. Broly protagoniza esta fusión de tonos negros y verdes con una estética inspirada en el universo Saiyajin.",
+ price:"Precio por consultar",
+ stock:"Consulta disponibilidad · Talla universal"
 },
 
-/* COLECCIÓN ROCK Y METAL - NOVIEMBRE 2026 */
+/* NUEVA COLECCIÓN MUSICAL - SLIPKNOT */
 
 {
-image:"Playera-Simpson-beatles.jpg",
-category:["musica","ropa"],
-label:"Música / Cultura Pop",
-name:"The Simpsons – Abbey Road Edition",
-description:"Dos universos icónicos se encuentran en una misma escena. Los personajes de Los Simpson recrean la legendaria portada de Abbey Road, en una propuesta que celebra la música y la cultura pop.",
-price:"Q60.00"
-},
-{
-image:"Playera-redhot-chilipeppers.jpg",
-category:["musica","ropa"],
-label:"Música / Rock",
-name:"Red Hot Chili Peppers – Red Logo",
-description:"Una identidad musical inconfundible. El contraste del logotipo rojo sobre negro transmite la energía y personalidad de una de las bandas más representativas del rock alternativo.",
-price:"Q60.00"
-},
-{
-images:["playera-slipknot-negra.jpg","playera-slipknot-parte-dorsal.jpg"],
-category:["musica","ropa"],
-label:"Música / Heavy Metal",
-name:"Slipknot – Heavy Edition",
-description:"Una estética intensa, oscura y desafiante. Una propuesta para quienes encuentran en el heavy metal una expresión auténtica de identidad y carácter.",
-price:"Q60.00"
-},
-{
-image:"playera-iron-maiden-negra-momia.jpg",
-category:["musica","ropa"],
-label:"Música / Heavy Metal",
-name:"Iron Maiden – The Mummy",
-description:"La oscuridad toma forma en un diseño protagonizado por una momia. Una pieza de inspiración heavy metal con la identidad visual característica de Iron Maiden.",
-price:"Q60.00"
-},
-{
-image:"playera-iron-maiden-enterrador.jpg",
-category:["musica","ropa"],
-label:"Música / Heavy Metal",
-name:"Iron Maiden – The Grave Digger",
-description:"Una escena sombría en la que la figura del enterrador cobra protagonismo. Diseño de carácter oscuro para quienes llevan el metal más allá de la música.",
-price:"Q60.00"
-},
-{
-image:"playera-gunsandrosses-logoclasico.jpg",
-category:["musica","ropa"],
-label:"Música / Rock",
-name:"Guns N' Roses – Classic Logo",
-description:"Una declaración de actitud rockera. El emblemático nombre de Guns N' Roses protagoniza un diseño clásico que conserva la esencia rebelde de toda una generación.",
-price:"Q60.00"
-},
-{
-image:"playera-guns-and-rosses-diseño-alterno.jpg",
-category:["musica","ropa"],
-label:"Música / Rock",
-name:"Guns N' Roses – Skull Edition",
-description:"Una calavera con sombrero entre armas compone una imagen de carácter desafiante. Una interpretación alternativa de la estética rockera de Guns N' Roses.",
-price:"Q60.00"
-},
-{
-image:"playera-iron-maiden-the-beast.jpg",
-category:["musica","ropa"],
-label:"Música / Heavy Metal",
-name:"Iron Maiden – The Number of the Beast",
-description:"El 666 y la simbología de uno de los álbumes más emblemáticos del heavy metal. Una pieza de fuerte identidad visual para los seguidores de Iron Maiden.",
-price:"Q60.00"
-},
-{
-image:"playera-AC-DC-campana.jpg",
-category:["musica","ropa"],
-label:"Música / Hard Rock",
-name:"AC/DC – Hells Bell",
-description:"Una campana rodeada de figuras demoníacas crea una composición de estética intensa. Inspirada en el sonido potente y la identidad legendaria de AC/DC.",
-price:"Q60.00"
-},
-{
-image:"playera-AC-DC-clasica-negra.jpg",
-category:["musica","ropa"],
-label:"Música / Hard Rock",
-name:"AC/DC – Classic Black",
-description:"Minimalismo rockero con una identidad que no necesita presentación. El diseño clásico de AC/DC sobre negro para quienes prefieren los símbolos que trascienden el tiempo.",
-price:"Q60.00"
-},
-{
-images:["playera-AC-DC-calaveras-frontal.jpg","playera-AC-DC-calaveras.jpg"],
-category:["musica","ropa"],
-label:"Música / Hard Rock",
-name:"AC/DC – Skulls & Chains",
-description:"Calaveras y cadenas construyen una composición de espíritu rebelde. Un diseño de AC/DC con presencia visual tanto al frente como en la parte posterior.",
-price:"Q60.00"
-},
-{
-image:"playera-AC-DC-banda.jpg",
-category:["musica","ropa"],
-label:"Música / Hard Rock",
-name:"AC/DC – Band Edition",
-description:"Los integrantes de AC/DC protagonizan esta pieza dedicada a la historia y el legado de una de las bandas más influyentes del hard rock.",
-price:"Q60.00"
-},
-{
-image:"playera-negra-gorillaz-diseño-alternativo.jpg",
-category:["musica","ropa"],
-label:"Música / Alternativo",
-name:"Gorillaz – Smiling Skull",
-description:"Una calavera sonriente aporta un carácter irreverente y alternativo. Una propuesta visual que conecta con el universo artístico poco convencional de Gorillaz.",
-price:"Q60.00"
-},
-{
-image:"playera-chillipeppers.jpg",
-category:["musica","ropa"],
-label:"Música / Rock Alternativo",
-name:"Red Hot Chili Peppers – Classic",
-description:"La esencia del rock alternativo en una propuesta clásica de color negro. Para quienes encuentran en la música una forma de expresión personal.",
-price:"Q60.00"
-},
-{
-images:["playera-negra-metálica-ataud.jpg","playera-negra-metálica-ataud-parte-dorsal.jpg"],
-category:["musica","ropa"],
-label:"Música / Heavy Metal",
-name:"Metallica – Coffin Edition",
-description:"Una composición oscura protagonizada por un ataúd, con una estética que refleja la fuerza y el carácter del heavy metal. Un diseño con presencia por ambos lados.",
-price:"Q60.00"
-},
-{
-image:"playera-negra-beatles.jpg",
-category:["musica","ropa"],
-label:"Música / Rock Clásico",
-name:"The Beatles – Classic Name",
-description:"Un nombre que marcó la historia de la música. Una propuesta sobria en negro para quienes reconocen el legado y la influencia de The Beatles.",
-price:"Q60.00"
-},
-{
-image:"playera-Led-zeppelin-diseño-alternativo.jpg",
-category:["musica","ropa"],
-label:"Música / Rock Clásico",
-name:"Led Zeppelin – Stairway to Heaven",
-description:"Una figura mística sostiene una llama en una composición inspirada en el universo simbólico de Led Zeppelin. Una pieza que evoca el espíritu de Stairway to Heaven.",
-price:"Q60.00"
-},
-{
-image:"playera-Led-zeppelin-diseño-ángel.jpg",
-category:["musica","ropa"],
-label:"Música / Rock Clásico",
-name:"Led Zeppelin – Fallen Angel",
-description:"Un ángel caído despliega sus alas sobre el mar en una escena de aire místico y contemplativo. Una propuesta visual que conecta con la profundidad artística del rock clásico.",
-price:"Q60.00"
+ image:"playera-slipknot-negra.jpg",
+ images:[
+   "playera-slipknot-negra.jpg",
+   "playera-slipknot-parte-dorsal.jpg"
+ ],
+ category:["musica","ropa"],
+ label:"Música / Heavy Metal",
+ name:"Slipknot – Heavy Edition",
+ description:"Una estética intensa, oscura y desafiante. Una propuesta para quienes encuentran en el heavy metal una expresión auténtica de identidad y carácter.",
+ price:"Q60.00",
+ stock:"Disponibilidad: consultar"
 }
 
 ];
 
-/* CONFIGURACIÓN DE WHATSAPP */
+/* CONFIGURACIÓN */
 
-const whatsappNumber = "50234899987";
-const productsContainer = document.getElementById("products");
+const whatsappNumber="50234899987";
+const productsContainer=document.getElementById("products");
 
-/* PROTECCIÓN DEL TEXTO MOSTRADO EN HTML */
+/* SEGURIDAD HTML */
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&":"&amp;",
-    "<":"&lt;",
-    ">":"&gt;",
-    '"':"&quot;",
-    "'":"&#39;"
-  })[character]);
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g,character=>({
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
+ })[character]);
 }
 
-/* MOSTRAR PRODUCTOS Y GALERÍAS */
+/* RUTAS DE IMÁGENES */
 
-function renderProducts(category = "todos") {
-  const filteredProducts = products.filter(product =>
-    category === "todos" || product.category.includes(category)
+function imageURL(filename){
+ return "assets/"+encodeURIComponent(filename);
+}
+
+/* MOSTRAR PRODUCTOS */
+
+function renderProducts(category="todos"){
+
+ const filteredProducts=products.filter(product=>
+  category==="todos" || product.category.includes(category)
+ );
+
+ productsContainer.innerHTML=filteredProducts.map(product=>{
+
+  const originalIndex=products.indexOf(product);
+  const images=product.images || [product.image];
+
+  const galleryClass=images.length>1
+    ?"product-gallery multiple"
+    :"product-gallery";
+
+  const imageHTML=images.map((filename,index)=>`
+    <img
+      src="${imageURL(filename)}"
+      alt="${escapeHTML(product.name)}${images.length>1?(index===0?" - Vista frontal":" - Vista posterior"):""}"
+      loading="lazy"
+      onerror="this.classList.add('image-error'); this.alt='Imagen no encontrada: ${escapeHTML(filename)}';"
+    >
+  `).join("");
+
+  return `
+   <article class="product">
+    <div class="${galleryClass}">
+      ${imageHTML}
+    </div>
+
+    <div class="product-info">
+      <span class="product-category">${escapeHTML(product.label)}</span>
+      <h3>${escapeHTML(product.name)}</h3>
+      <p>${escapeHTML(product.description)}</p>
+      <div class="price">${escapeHTML(product.price)}</div>
+      <div class="stock">● ${escapeHTML(product.stock || "Disponibilidad: consultar")}</div>
+      <button class="order-button" data-product-index="${originalIndex}">
+       CONSULTAR / PEDIR
+      </button>
+    </div>
+   </article>
+  `;
+ }).join("");
+}
+
+/* FILTROS */
+
+function filterProducts(category){
+
+ document.querySelectorAll(".filter").forEach(button=>{
+  button.classList.toggle(
+   "active",
+   button.dataset.filter===category
   );
+ });
 
-  productsContainer.innerHTML = filteredProducts.map(product => {
-    const originalIndex = products.indexOf(product);
-    const productImages = product.images || [product.image];
-
-    const galleryClass = productImages.length > 1
-      ? "product-gallery multiple"
-      : "product-gallery";
-
-    return `
-      <article class="product">
-        <div class="${galleryClass}">
-          ${productImages.map(image => `
-            <img
-              src="assets/${encodeURIComponent(image)}"
-              alt="${escapeHTML(product.name)}"
-              loading="lazy"
-              onerror="this.classList.add('image-error'); this.alt='Imagen no encontrada';"
-            >
-          `).join("")}
-        </div>
-
-        <div class="product-info">
-          <span class="product-category">${escapeHTML(product.label)}</span>
-          <h3>${escapeHTML(product.name)}</h3>
-          <p>${escapeHTML(product.description)}</p>
-          <div class="price">${escapeHTML(product.price)}</div>
-          <div class="stock">● ${escapeHTML(product.stock || "Disponibilidad: consultar")}</div>
-
-          <button class="order-button" data-product-index="${originalIndex}">
-            CONSULTAR / PEDIR
-          </button>
-        </div>
-      </article>
-    `;
-  }).join("");
+ renderProducts(category);
 }
 
-/* ACTUALIZAR FILTROS */
+/* PEDIDOS POR WHATSAPP */
 
-function filterProducts(category) {
-  document.querySelectorAll(".filter").forEach(button => {
-    button.classList.toggle(
-      "active",
-      button.dataset.filter === category
-    );
-  });
+function order(product){
 
-  renderProducts(category);
+ const message=
+ `Hola YOUR STYLE, quiero consultar disponibilidad y realizar un pedido de: ${product.name}. Precio publicado: ${product.price}. ¿Me pueden confirmar existencia y opciones?`;
+
+ const url=
+ `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+ window.open(url,"_blank","noopener");
 }
 
-/* GENERAR PEDIDO POR WHATSAPP */
+/* EVENTOS DE FILTROS */
 
-function order(product) {
-  const message =
-    `Hola YOUR STYLE, quiero consultar disponibilidad y realizar un pedido de: ${product.name}. Precio publicado: ${product.price}. ¿Me pueden confirmar existencia y opciones?`;
+document.querySelector(".filters").addEventListener("click",event=>{
 
-  const url =
-    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+ const button=event.target.closest("[data-filter]");
+ if(!button)return;
 
-  window.open(url, "_blank", "noopener");
-}
-
-/* EVENTOS DE LOS BOTONES DE FILTRO */
-
-document.querySelector(".filters").addEventListener("click", event => {
-  const button = event.target.closest("[data-filter]");
-  if (!button) return;
-
-  filterProducts(button.dataset.filter);
+ filterProducts(button.dataset.filter);
 });
 
-/* EVENTOS DE LAS CATEGORÍAS */
+/* EVENTOS DE CATEGORÍAS */
 
-document.querySelector(".categories").addEventListener("click", event => {
-  const link = event.target.closest("[data-category-link]");
-  if (!link) return;
+document.querySelector(".categories").addEventListener("click",event=>{
 
-  filterProducts(link.dataset.categoryLink);
+ const link=event.target.closest("[data-category-link]");
+ if(!link)return;
+
+ filterProducts(link.dataset.categoryLink);
 });
 
-/* EVENTOS DE LOS BOTONES DE PEDIDO */
+/* EVENTOS DE PEDIDOS */
 
-productsContainer.addEventListener("click", event => {
-  const button = event.target.closest("[data-product-index]");
-  if (!button) return;
+productsContainer.addEventListener("click",event=>{
 
-  const product = products[Number(button.dataset.productIndex)];
-  if (product) order(product);
+ const button=event.target.closest("[data-product-index]");
+ if(!button)return;
+
+ const product=products[Number(button.dataset.productIndex)];
+
+ if(product)order(product);
 });
 
 /* CARGAR CATÁLOGO */
