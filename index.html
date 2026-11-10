@@ -5,8 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<meta name="description" content="YOUR STYLE: ropa, música, anime, manga, cómics y cultura alternativa. Encuentra aquello que representa tu esencia.">
+<meta name="description" content="YOUR STYLE: ropa, música, anime, manga, cómics, cuadros y cultura alternativa. Encuentra aquello que representa tu esencia.">
 <title>YOUR STYLE | Beyond the Surface</title>
+
 <style>
 :root{--bg:#090909;--surface:#141414;--text:#f4f0ed;--muted:#a5a09d;--accent:#c9a46a;--line:#303030}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,6 +61,7 @@ section{padding:70px 7%}
 .manifesto p{max-width:600px;margin:auto;color:var(--muted);font-size:14px}
 footer{padding:28px 7%;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:11px;letter-spacing:1px}
 .whatsapp{position:fixed;right:20px;bottom:20px;z-index:10;padding:13px 17px;border-radius:30px;background:#218c58;color:white;font-size:12px;font-weight:bold;box-shadow:0 5px 20px #0008}
+
 @media(max-width:750px){
 header{flex-direction:column}
 nav{justify-content:center;gap:15px}
@@ -69,9 +71,12 @@ nav{justify-content:center;gap:15px}
 .product-info{padding:12px}
 .product h3{font-size:14px}
 }
-@media(max-width:390px){.products{grid-template-columns:1fr}}
+@media(max-width:390px){
+.products{grid-template-columns:1fr}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -85,6 +90,7 @@ nav{justify-content:center;gap:15px}
 </header>
 
 <main>
+
 <section class="hero" id="inicio">
 <div class="hero-content">
 <div class="eyebrow">ESTILO · IDENTIDAD · CULTURA</div>
@@ -100,11 +106,13 @@ nav{justify-content:center;gap:15px}
 <h2>Categorías</h2>
 <p>Encuentra aquello que conecta con tu esencia.</p>
 </div>
+
 <div class="categories">
 <a class="category" href="#catalogo" data-category-link="ropa">ROPA / STREETWEAR</a>
 <a class="category" href="#catalogo" data-category-link="anime">ANIME & MANGA</a>
 <a class="category" href="#catalogo" data-category-link="comics">CÓMICS</a>
 <a class="category" href="#catalogo" data-category-link="musica">MÚSICA</a>
+<a class="category" href="#catalogo" data-category-link="cuadros">ARTE & CUADROS</a>
 </div>
 </section>
 
@@ -114,6 +122,7 @@ nav{justify-content:center;gap:15px}
 <h2>Catálogo</h2>
 <p>Productos disponibles. Consulta por WhatsApp para realizar tu pedido.</p>
 </div>
+
 <div class="filters">
 <button class="filter active" data-filter="todos">TODOS</button>
 <button class="filter" data-filter="ropa">ROPA</button>
@@ -121,7 +130,9 @@ nav{justify-content:center;gap:15px}
 <button class="filter" data-filter="comics">CÓMICS</button>
 <button class="filter" data-filter="musica">MÚSICA</button>
 <button class="filter" data-filter="accesorios">ACCESORIOS</button>
+<button class="filter" data-filter="cuadros">CUADROS</button>
 </div>
+
 <div class="products" id="products"></div>
 </section>
 
@@ -138,9 +149,11 @@ nav{justify-content:center;gap:15px}
 <h2>NO SIGAS TENDENCIAS.<br><span>DEFINE TU ESTILO.</span></h2>
 <p>YOUR STYLE reúne música, arte, moda y cultura. Un espacio para expresar aquello que te representa.</p>
 </section>
+
 </main>
 
 <footer>YOUR STYLE © 2026 · GUATEMALA · ESTILO SIN LÍMITES</footer>
+
 <a class="whatsapp" href="https://wa.me/50234899987?text=Hola%20YOUR%20STYLE" target="_blank" rel="noopener">WHATSAPP</a>
 
 <script>
@@ -249,7 +262,25 @@ const products = [
 
 /* LED ZEPPELIN */
 {image:"playera-Led-zeppelin-diseño-alternativo.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Stairway to Heaven",description:"Una figura de inspiración mística con una candela encendida evoca el universo simbólico de Stairway to Heaven. Una pieza para quienes encuentran en el rock una experiencia que trasciende generaciones.",price:"Q60.00",stock:"Consulta disponibilidad"},
-{image:"playera-Led-zeppelin-diseño-ángel.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Fallen Angel",description:"Un ángel de alas extendidas sobre el mar crea una escena de fuerza y contemplación. Una propuesta visual inspirada en la dimensión artística y espiritual del rock clásico.",price:"Q60.00",stock:"Consulta disponibilidad"}
+{image:"playera-Led-zeppelin-diseño-ángel.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Fallen Angel",description:"Un ángel de alas extendidas sobre el mar crea una escena de fuerza y contemplación. Una propuesta visual inspirada en la dimensión artística y espiritual del rock clásico.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+/* NUEVA COLECCIÓN – CUADROS DECORATIVOS */
+
+/* CÓMICS */
+{image:"cuadro batman.jpg",category:["cuadros","comics"],label:"Cuadros / Cómics",name:"Batman – Dark Edition",description:"Una presencia icónica que aporta carácter y misterio a cualquier espacio.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro spiderman noche .jpg",category:["cuadros","comics"],label:"Cuadros / Cómics",name:"Spider-Man – Night Edition",description:"Una composición nocturna para darle personalidad y estilo a tus paredes.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+/* ANIME */
+{image:"cuadro Naruto.jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Naruto – Anime Art",description:"Energía, determinación y esencia anime en una pieza decorativa.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro vegeta .jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Vegeta – Saiyan Pride",description:"Orgullo, fuerza y carácter para darle personalidad a tu espacio.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro Goku azul .jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Goku – Blue Edition",description:"Una estética vibrante que destaca por su energía y estilo.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+/* MÚSICA */
+{image:"cuadro beatles.jpg",category:["cuadros","musica"],label:"Cuadros / Música",name:"The Beatles – Classic Art",description:"Un clásico musical que aporta historia y personalidad a cualquier rincón.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"Iron Maiden cuadro.jpg",category:["cuadros","musica"],label:"Cuadros / Heavy Metal",name:"Iron Maiden – Metal Art",description:"Espíritu del heavy metal y estética legendaria para destacar en tus paredes.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro Gorillaz tunel.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Tunnel Edition",description:"Una propuesta visual alternativa con identidad propia y un toque artístico.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro Gorillaz fondo rojo.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Red Edition",description:"Color, personalidad y cultura musical en una pieza que no pasa desapercibida.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"cuadro nirvana bebe dólar.jpg",category:["cuadros","musica"],label:"Cuadros / Grunge",name:"Nirvana – Nevermind",description:"Una pieza de estética grunge inspirada en el icónico universo visual de Nirvana.",price:"Q60.00",stock:"Consulta disponibilidad"}
 
 ];
 
@@ -262,7 +293,11 @@ const productsContainer=document.getElementById("products");
 
 function escapeHTML(value){
  return String(value).replace(/[&<>"']/g,character=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&#39;"
  })[character]);
 }
 
@@ -275,11 +310,13 @@ function imageURL(filename){
 /* MOSTRAR PRODUCTOS */
 
 function renderProducts(category="todos"){
+
  const filteredProducts=products.filter(product=>
   category==="todos" || product.category.includes(category)
  );
 
  productsContainer.innerHTML=filteredProducts.map(product=>{
+
   const originalIndex=products.indexOf(product);
   const images=product.images || [product.image];
 
@@ -311,49 +348,68 @@ function renderProducts(category="todos"){
     </div>
    </article>
   `;
+
  }).join("");
+
 }
 
 /* FILTROS */
 
 function filterProducts(category){
+
  document.querySelectorAll(".filter").forEach(button=>{
   button.classList.toggle("active",button.dataset.filter===category);
  });
+
  renderProducts(category);
+
 }
 
 /* PEDIDOS POR WHATSAPP */
 
 function order(product){
+
  const message=`Hola YOUR STYLE, quiero consultar disponibilidad y realizar un pedido de: ${product.name}. Precio publicado: ${product.price}. ¿Me pueden confirmar existencia y opciones?`;
+
  const url=`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
  window.open(url,"_blank","noopener");
+
 }
 
 /* EVENTOS DE FILTROS */
 
 document.querySelector(".filters").addEventListener("click",event=>{
+
  const button=event.target.closest("[data-filter]");
  if(!button)return;
+
  filterProducts(button.dataset.filter);
+
 });
 
 /* EVENTOS DE CATEGORÍAS */
 
 document.querySelector(".categories").addEventListener("click",event=>{
+
  const link=event.target.closest("[data-category-link]");
  if(!link)return;
+
  filterProducts(link.dataset.categoryLink);
+
 });
 
 /* EVENTOS DE PEDIDOS */
 
 productsContainer.addEventListener("click",event=>{
+
  const button=event.target.closest("[data-product-index]");
  if(!button)return;
+
  const product=products[Number(button.dataset.productIndex)];
+
  if(product)order(product);
+
 });
 
 /* CARGAR CATÁLOGO */
@@ -361,5 +417,6 @@ productsContainer.addEventListener("click",event=>{
 renderProducts();
 
 </script>
+
 </body>
 </html>
