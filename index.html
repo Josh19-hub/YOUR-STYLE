@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
-<meta name="description" content="YOUR STYLE: ropa, música, anime, manga, cómics, cuadros y cultura alternativa. Encuentra aquello que representa tu esencia.">
+<meta name="description" content="YOUR STYLE: ropa, streetwear, rap, música, anime, manga, cómics, cuadros y cultura alternativa. Encuentra aquello que representa tu esencia.">
 <title>YOUR STYLE | Beyond the Surface</title>
 
 <style>
@@ -39,6 +39,11 @@ section{padding:70px 7%}
 .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
 .filter{background:transparent;color:var(--muted);border:1px solid var(--line);padding:9px 16px;font-size:12px}
 .filter.active,.filter:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+.urban-intro{display:none;padding:24px;margin-bottom:25px;background:linear-gradient(110deg,#211b15,#111);border:1px solid #574832}
+.urban-intro.visible{display:block}
+.urban-intro small{color:var(--accent);letter-spacing:3px;font-size:10px;font-weight:bold}
+.urban-intro h3{font-size:23px;margin:5px 0}
+.urban-intro p{font-size:13px;color:var(--muted)}
 .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .product{background:var(--surface);border:1px solid var(--line);overflow:hidden;transition:.25s}
 .product:hover{border-color:#786344;transform:translateY(-4px)}
@@ -107,6 +112,7 @@ nav{justify-content:center;gap:15px}
 <p>Encuentra aquello que conecta con tu esencia.</p>
 </div>
 <div class="categories">
+<a class="category" href="#catalogo" data-category-link="urbana">ROPA URBANA</a>
 <a class="category" href="#catalogo" data-category-link="ropa">ROPA / STREETWEAR</a>
 <a class="category" href="#catalogo" data-category-link="anime">ANIME & MANGA</a>
 <a class="category" href="#catalogo" data-category-link="comics">CÓMICS</a>
@@ -121,8 +127,10 @@ nav{justify-content:center;gap:15px}
 <h2>Catálogo</h2>
 <p>Productos disponibles. Consulta por WhatsApp para realizar tu pedido.</p>
 </div>
+
 <div class="filters">
 <button class="filter active" data-filter="todos">TODOS</button>
+<button class="filter" data-filter="urbana">ROPA URBANA</button>
 <button class="filter" data-filter="ropa">ROPA</button>
 <button class="filter" data-filter="anime">ANIME</button>
 <button class="filter" data-filter="comics">CÓMICS</button>
@@ -130,6 +138,13 @@ nav{justify-content:center;gap:15px}
 <button class="filter" data-filter="accesorios">ACCESORIOS</button>
 <button class="filter" data-filter="cuadros">CUADROS & ARTE</button>
 </div>
+
+<div class="urban-intro" id="urbanIntro">
+<small>YOUR STYLE · STREETWEAR COLLECTION</small>
+<h3>ROPA URBANA</h3>
+<p>Rap, Hip-Hop, Oversize y Streetwear. Diseños con personalidad, actitud y una identidad propia. Explora nuestra colección urbana.</p>
+</div>
+
 <div class="products" id="products"></div>
 </section>
 
@@ -161,32 +176,28 @@ const products = [
 {image:"playera-west-coast-choppers-negra.jpg",category:["musica"],label:"Música / Streetwear",name:"West Coast Choppers",description:"Inspiración biker y cultura custom en una pieza de carácter urbano.",price:"Q60.00"},
 {image:"playera-pink-floyd-the-wall-negra.jpg",category:["musica"],label:"Música",name:"Pink Floyd – The Wall",description:"Una obra emblemática del rock convertida en expresión de identidad musical.",price:"Q60.00"},
 {image:"playera-gorillaz-negra.jpg",category:["musica"],label:"Música",name:"Gorillaz",description:"Arte, música y personalidad alternativa en un diseño inconfundible.",price:"Q60.00"},
-{image:"playera-nwa-greatest-hits.jpg",category:["musica"],label:"Música",name:"N.W.A – Greatest Hits",description:"Una referencia esencial de la historia del hip-hop.",price:"Q60.00"},
-{image:"playera-nwa-frente-blanco.jpg",category:["musica"],label:"Música",name:"N.W.A – Diseño clásico",description:"Una propuesta inspirada en el legado de una banda que marcó época.",price:"Q60.00"},
-{image:"playera-nwa-frente-rojo.jpg",category:["musica"],label:"Música",name:"N.W.A – Variante roja",description:"Una versión alternativa para quienes llevan el hip-hop en su identidad.",price:"Q60.00"},
-{image:"playera-tupac-oversize-negra.jpg",category:["musica","ropa"],label:"Música / Oversize",name:"Tupac – Oversize Collection",description:"Cultura hip-hop y estilo urbano. Consulta los colores disponibles: negro, vino, azul, gris y blanco.",price:"Q75.00",stock:"Consulta el color disponible"},
-{image:"playera-tupac-oversize-colores-disponibles.jpg",category:["musica","ropa"],label:"Música / Oversize",name:"Tupac – Colores disponibles",description:"Vista de las variantes de color de esta colección oversize.",price:"Q75.00",stock:"Confirma tu color por WhatsApp"},
+{image:"playera-nwa-greatest-hits.jpg",category:["musica","urbana"],label:"Rap / Hip-Hop",name:"N.W.A – Greatest Hits",description:"Una referencia esencial de la historia del hip-hop.",price:"Q60.00"},
+{image:"playera-nwa-frente-blanco.jpg",category:["musica","urbana"],label:"Rap / Hip-Hop",name:"N.W.A – Diseño clásico",description:"Una propuesta inspirada en el legado de una banda que marcó época.",price:"Q60.00"},
+{image:"playera-nwa-frente-rojo.jpg",category:["musica","urbana"],label:"Rap / Hip-Hop",name:"N.W.A – Variante roja",description:"Una versión alternativa para quienes llevan el hip-hop en su identidad.",price:"Q60.00"},
+{image:"playera-tupac-oversize-negra.jpg",category:["musica","ropa","urbana"],label:"Rap / Hip-Hop / Oversize",name:"Tupac – Oversize Collection",description:"Cultura hip-hop y estilo urbano. Consulta los colores disponibles: negro, vino, azul, gris y blanco.",price:"Q75.00",stock:"Consulta el color disponible"},
+{image:"playera-tupac-oversize-colores-disponibles.jpg",category:["musica","ropa","urbana"],label:"Rap / Hip-Hop / Oversize",name:"Tupac – Colores disponibles",description:"Vista de las variantes de color de esta colección oversize.",price:"Q75.00",stock:"Confirma tu color por WhatsApp"},
 {image:"playera-dragon-ball-goku-neon-negra.jpg",category:["anime"],label:"Anime",name:"Dragon Ball – Goku Neón",description:"La energía de uno de los personajes más emblemáticos del anime.",price:"Q60.00"},
 {image:"playera-dragon-ball-goku-simbolo-negra.jpg",category:["anime"],label:"Anime",name:"Dragon Ball – Goku",description:"Diseño de Goku para quienes llevan el espíritu Saiyajin consigo.",price:"Q75.00"},
 {image:"playera-dragon-ball-goku-naranja-negra.jpg",category:["anime"],label:"Anime",name:"Dragon Ball – Goku Naranja",description:"Una variante inspirada en el legendario universo Dragon Ball.",price:"Precio por consultar"},
 {image:"playera-deadpool-roja.jpg",category:["comics"],label:"Cómics",name:"Deadpool",description:"Actitud irreverente y personalidad fuera de lo convencional.",price:"Q60.00"},
-{image:"playera-oh-shit-oversize-azul.jpg",category:["ropa"],label:"Ropa / Oversize",name:"Oh! Sh*t – Oversize",description:"Diseño gráfico en tono azul con una estética urbana y desenfadada.",price:"Q100.00"},
+{image:"playera-oh-shit-oversize-azul.jpg",category:["ropa","urbana"],label:"Ropa urbana / Oversize",name:"Oh! Sh*t – Oversize",description:"Diseño gráfico en tono azul con una estética urbana y desenfadada.",price:"Q100.00"},
 {image:"accesorios-calaveras-conjunto.jpg",category:["accesorios"],label:"Accesorios",name:"Conjunto de calaveras",description:"Conjunto disponible en blanco/negro y rojo/negro. También puedes consultar por pieza individual.",price:"Combo Q60.00"},
 {image:"accesorio-mangas-calaveras-blanco-negro.jpg",category:["accesorios"],label:"Accesorios",name:"Mangas de calaveras – Blanco/negro",description:"Un accesorio de inspiración alternativa para completar tu estilo.",price:"Q30.00"},
 {image:"accesorio-mangas-calaveras-rojo-negro.jpg",category:["accesorios"],label:"Accesorios",name:"Mangas de calaveras – Rojo/negro",description:"Contraste y carácter en un accesorio de estética oscura.",price:"Q30.00"},
 {image:"accesorio-calaveras-blanco-negro-detalle.jpg",category:["accesorios"],label:"Accesorios",name:"Accesorio de calaveras – Detalle",description:"Vista de detalle del diseño blanco y negro.",price:"Q30.00"},
 {image:"accesorios-motorista.jpg",category:["accesorios"],label:"Accesorios",name:"Accesorios motorista",description:"Estilo y personalidad para quienes viven sobre ruedas.",price:"Precio por consultar"},
 
-/* NUEVOS ACCESORIOS – BANDANAS Y MANGAS */
+/* ACCESORIOS – BANDANAS Y MANGAS */
 
 {image:"publicidad-mangas-bandana-negroblanco.jpg",category:["accesorios"],label:"Accesorios / Motorista",name:"Combo Mangas & Bandana – Negro/Blanco",description:"Un conjunto de inspiración biker que combina un par de mangas y una bandana en tonos negro y blanco. Llévate el combo completo o adquiere cada artículo por separado.",price:"Combo Q60.00 · Q30.00 cada artículo",stock:"Combo: 1 par de mangas + 1 bandana. Consulta disponibilidad."},
-
 {image:"publicidad-mangas-bandana.jpg",category:["accesorios"],label:"Accesorios / Motorista",name:"Combo Mangas & Bandana",description:"Completa tu estilo con un par de mangas y una bandana en un mismo conjunto. Dos accesorios que puedes llevar juntos o adquirir individualmente.",price:"Combo Q60.00 · Q30.00 cada artículo",stock:"Combo: 1 par de mangas + 1 bandana. Consulta disponibilidad."},
-
 {image:"accesorios-motorista-KTm.jpg",category:["accesorios"],label:"Accesorios / KTM",name:"KTM – Biker Collection",description:"Una propuesta para los amantes de la cultura motorista, inspirada en la identidad deportiva de KTM. Consulta por el conjunto completo o por cada artículo individual.",price:"Combo Q60.00 · Q30.00 cada artículo",stock:"Consulta disponibilidad."},
-
 {image:"combo-mangas-YAMAHA.jpg",category:["accesorios"],label:"Accesorios / Yamaha",name:"Yamaha – Manga Collection",description:"Accesorios con identidad Yamaha para complementar tu estilo dentro y fuera de la carretera. Disponible en combo o por artículo individual.",price:"Combo Q60.00 · Q30.00 cada artículo",stock:"Consulta disponibilidad."},
-
 {image:"combo-mangas-Harleydavison.jpg",category:["accesorios"],label:"Accesorios / Harley-Davidson",name:"Harley-Davidson – Biker Collection",description:"Espíritu biker y carácter clásico en una propuesta inspirada en Harley-Davidson. Elige el combo completo o adquiere cada artículo por separado.",price:"Combo Q60.00 · Q30.00 cada artículo",stock:"Consulta disponibilidad."},
 
 {image:"beatles.jpg",category:["musica"],label:"Música",name:"The Beatles",description:"Un clásico que trasciende generaciones y estilos.",price:"Precio por consultar"},
@@ -198,7 +209,7 @@ const products = [
 {image:"pink-floyd.jpg",category:["musica"],label:"Música",name:"Pink Floyd – Diseño anterior",description:"Una experiencia musical fuera de lo convencional.",price:"Precio por consultar"},
 {image:"spiderman.jpg",category:["comics"],label:"Cómics",name:"Spider-Man",description:"Uno de los grandes iconos del universo Marvel.",price:"Precio por consultar"},
 
-/* COLECCIÓN DE ROPA – NOVIEMBRE 2026 */
+/* ROPA – NOVIEMBRE 2026 */
 
 {image:"Playera-spiderman-negra .jpg",category:["comics","ropa"],label:"Cómics / Streetwear",name:"Spider-Man – Negra",description:"Una silueta icónica de Marvel, con carácter y estilo urbano.",price:"Q60.00",stock:"1 unidad disponible · Talla universal"},
 {image:"playeraBatman-negra.jpg",category:["comics","ropa"],label:"Cómics / Streetwear",name:"Batman – Negra",description:"Elegancia oscura y la presencia inconfundible del Caballero de la Noche.",price:"Q60.00",stock:"1 unidad disponible · Talla universal"},
@@ -221,21 +232,57 @@ const products = [
 {image:"cuadro-coleccionable-onepeace.jpg",category:["anime","cuadros"],label:"Anime / Arte Coleccionable",name:"One Piece – Cuadro Coleccionable",description:"Libertad, lealtad y sueños sin fronteras. Una pieza inspirada en el universo de One Piece.",price:"Q60.00",stock:"Consulta disponibilidad"},
 {image:"cuadrocoleccionable-deathnote.jpg",category:["anime","cuadros"],label:"Anime / Arte Coleccionable",name:"Death Note – Cuadro Coleccionable",description:"Misterio, inteligencia y una estética que desafía lo convencional.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-/* NUEVA COLECCIÓN – NOVIEMBRE 2026 */
+/* ROPA URBANA – COLECCIÓN ANTERIOR */
 
-{image:"playera-pantera rosa-negra.jpg",category:["ropa"],label:"Streetwear / Oversize",name:"Pantera Rosa – Black Edition",description:"Actitud urbana y personalidad sin filtros. La icónica Pantera Rosa se transforma en una pieza de estilo alternativo sobre fondo negro.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-panterarosa-celeste.jpg",category:["ropa"],label:"Streetwear / Oversize",name:"Pantera Rosa – Blue Edition",description:"Una combinación que destaca. Pantera Rosa en una versión celeste con toda la esencia del streetwear contemporáneo.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-panterarosa-verde.jpg",category:["ropa"],label:"Streetwear / Algodón",name:"Pantera Rosa – Green Edition",description:"Algodón 100%, comodidad y actitud urbana. Una versión en verde que rompe con lo convencional.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-oversize-corridos_negra.jpg",category:["musica","ropa"],label:"Música / Streetwear",name:"Corridos – Black Pearl",description:"Estética oscura con detalles perlados. Una pieza oversize inspirada en la identidad y el estilo de la cultura de los corridos.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-believe-david-frontal.jpg",category:["ropa"],label:"Arte / Streetwear",name:"David – Believe Edition",description:"El arte clásico se encuentra con la moda urbana. La escultura de David protagoniza un diseño de inspiración artística.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-david-parte-dorsa.jpg",category:["ropa"],label:"Arte / Streetwear",name:"David – Believe Edition · Back",description:"Vista posterior de un diseño que fusiona arte renacentista y estética contemporánea.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-mancuernas-colorcrema.jpg",category:["ropa"],label:"Fitness / Streetwear",name:"Strength – Cream Edition",description:"La fuerza también es una forma de expresión. Diseño de mancuernas en tono crema.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-mancuernas-colorcrema3.jpg",category:["ropa"],label:"Fitness / Streetwear",name:"Strength – Cream Edition · Back",description:"Vista posterior del diseño Strength. Una propuesta que combina cultura fitness y personalidad oversize.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-oversize-smilleshine2.jpg",category:["ropa"],label:"Streetwear / Oversize",name:"Smile & Shine – Black Edition",description:"Una sonrisa, una actitud y un estilo propio. Diseño gráfico sobre negro para quienes prefieren destacar sin seguir las reglas.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
-{image:"playera-smileshine-negra.jpg",category:["ropa"],label:"Streetwear / Oversize",name:"Smile & Shine – Black Edition · Back",description:"Vista posterior de Smile & Shine. Una composición urbana que completa una propuesta llena de carácter.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-pantera rosa-negra.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Pantera Rosa – Black Edition",description:"Actitud urbana y personalidad sin filtros. La icónica Pantera Rosa se transforma en una pieza de estilo alternativo sobre fondo negro.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-panterarosa-celeste.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Pantera Rosa – Blue Edition",description:"Una combinación que destaca. Pantera Rosa en una versión celeste con toda la esencia del streetwear contemporáneo.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-panterarosa-verde.jpg",category:["ropa","urbana"],label:"Streetwear / Algodón",name:"Pantera Rosa – Green Edition",description:"Algodón 100%, comodidad y actitud urbana. Una versión en verde que rompe con lo convencional.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-oversize-corridos_negra.jpg",category:["musica","ropa","urbana"],label:"Música / Streetwear",name:"Corridos – Black Pearl",description:"Estética oscura con detalles perlados. Una pieza oversize inspirada en la identidad y el estilo de la cultura de los corridos.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-believe-david-frontal.jpg",category:["ropa","urbana"],label:"Arte / Streetwear",name:"David – Believe Edition",description:"El arte clásico se encuentra con la moda urbana. La escultura de David protagoniza un diseño de inspiración artística.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-david-parte-dorsa.jpg",category:["ropa","urbana"],label:"Arte / Streetwear",name:"David – Believe Edition · Back",description:"Vista posterior de un diseño que fusiona arte renacentista y estética contemporánea.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-mancuernas-colorcrema.jpg",category:["ropa","urbana"],label:"Fitness / Streetwear",name:"Strength – Cream Edition",description:"La fuerza también es una forma de expresión. Diseño de mancuernas en tono crema.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-mancuernas-colorcrema3.jpg",category:["ropa","urbana"],label:"Fitness / Streetwear",name:"Strength – Cream Edition · Back",description:"Vista posterior del diseño Strength. Una propuesta que combina cultura fitness y personalidad oversize.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-oversize-smilleshine2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Smile & Shine – Black Edition",description:"Una sonrisa, una actitud y un estilo propio. Diseño gráfico sobre negro para quienes prefieren destacar sin seguir las reglas.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+{image:"playera-smileshine-negra.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Smile & Shine – Black Edition · Back",description:"Vista posterior de Smile & Shine. Una composición urbana que completa una propuesta llena de carácter.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
 {image:"sudadero-onepeace.jpg",category:["anime","ropa"],label:"Anime / Streetwear",name:"One Piece – Fusion Edition",description:"El espíritu de aventura de One Piece cobra vida en una fusión de negro, rojo y beige.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
 {image:"sudadero-Goku-blanco.jpg",category:["anime","ropa"],label:"Anime / Streetwear",name:"Dragon Ball Super – Goku Blue",description:"El poder Saiyajin llevado al streetwear. Goku Blue protagoniza una composición estilo historieta.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
 {image:"sudadero-broly-negro.jpg",category:["anime","ropa"],label:"Anime / Streetwear",name:"Broly – Legendary Saiyan",description:"Poder desatado y presencia imponente. Broly protagoniza esta fusión de tonos negros y verdes.",price:"Precio por consultar",stock:"Consulta disponibilidad · Talla universal"},
+
+/* NUEVOS PRODUCTOS – RAP, HIP-HOP Y ROPA URBANA */
+
+{image:"playera-EAZY-E.jpg",category:["musica","ropa","urbana"],label:"Rap / Hip-Hop",name:"EAZY-E – Rap Edition",description:"Una figura esencial del rap de la Costa Oeste. Una pieza que conecta con la historia, la actitud y la identidad del hip-hop.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-bugs-bunny-negra.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Style",name:"Bugs Bunny – Black Edition",description:"El icónico conejo en una interpretación de estilo urbano. Una combinación de cultura pop, personalidad y actitud streetwear.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-oversize-Is-money-partedelantera.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"IS MONEY – Front Edition",description:"Una propuesta oversize de estética urbana, con un diseño que expresa personalidad y carácter.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-oversize-negra-is-money-parteposterior.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"IS MONEY – George Washington Back",description:"Diseño posterior inspirado en George Washington. Una composición que une referencias monetarias y estética streetwear.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-oversize-money-talks-1.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Money Talks – Edition I",description:"Una declaración de estilo urbano en formato oversize. Diseño con personalidad para quienes prefieren expresarse a través de su imagen.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-oversize-money-talks-2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Money Talks – Edition II",description:"Signos de dólar y cadenas en la parte posterior. Una composición de inspiración urbana con una presencia visual marcada.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"money-talks-corinto.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Money Talks – Corinto Edition",description:"Una versión en color corinto que combina estética urbana y diseño oversize.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"over-size-positive-negra-1.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Positive – Black Edition",description:"Una propuesta oversize de inspiración urbana que transmite una actitud positiva y una identidad propia.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"over-size-positive-2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Positive – Angel Back",description:"Diseño posterior con ángel, alas y palomas. Una composición sutil que aporta un toque artístico y simbólico a la estética urbana.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"over-size-tupac-thug-corinta.jpg",category:["musica","ropa","urbana"],label:"Rap / Hip-Hop / Oversize",name:"Tupac Thug – Corinto Edition",description:"La esencia del hip-hop representada por Tupac en una pieza oversize color corinto. Cultura musical y actitud urbana.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"over-size-ganster-negro-1.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Gangster – Black Edition",description:"Diseño negro oversize con identidad urbana y una estética de carácter fuerte.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"over-size-ganster-negra-2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"Gangster – Back Edition",description:"Diseño posterior con figura de gorro y cadenas. Una composición de inspiración urbana con una estética marcada.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"colección-ganster-over-size.jpg",category:["ropa","urbana"],label:"Streetwear / Colección Oversize",name:"Gangster – Color Collection",description:"Colección de playeras oversize Gangster en variedad de colores. Consulta las opciones disponibles.",price:"Q75.00",stock:"Consulta disponibilidad de colores"},
+
+{image:"colección-ganstar-2.jpg",category:["ropa","urbana"],label:"Streetwear / Colección Oversize",name:"Gangster – Collection II",description:"Una segunda selección de diseños Gangster en distintos colores. Elige la variante que mejor represente tu estilo.",price:"Q75.00",stock:"Consulta disponibilidad de colores"},
+
+{image:"colección-over-size-Lamoney.jpg",category:["ropa","urbana"],label:"Streetwear / LA Collection",name:"LA Money – Color Collection",description:"Colección de playeras oversize LA en distintos colores. Una propuesta urbana con identidad propia.",price:"Q75.00",stock:"Consulta disponibilidad de colores"},
+
+{image:"Over-size-La-1.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"LA – Black Edition",description:"Diseño LA en color negro y corte oversize. Una propuesta sobria de inspiración streetwear.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+{image:"Over-size-La-2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"LA – Angel Wings Back",description:"Diseño posterior con alas de ángel. Una combinación de simbolismo y estética urbana en formato oversize.",price:"Q75.00",stock:"Consulta disponibilidad"},
 
 /* NUEVA COLECCIÓN MUSICAL – NOVIEMBRE 2026 */
 
@@ -274,9 +321,7 @@ const products = [
 {image:"playera-Led-zeppelin-diseño-alternativo.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Stairway to Heaven",description:"Una figura de inspiración mística con una candela encendida evoca el universo simbólico de Stairway to Heaven. Una pieza para quienes encuentran en el rock una experiencia que trasciende generaciones.",price:"Q60.00",stock:"Consulta disponibilidad"},
 {image:"playera-Led-zeppelin-diseño-ángel.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Fallen Angel",description:"Un ángel de alas extendidas sobre el mar crea una escena de fuerza y contemplación. Una propuesta visual inspirada en la dimensión artística y espiritual del rock clásico.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-/* NUEVA COLECCIÓN – CUADROS DECORATIVOS */
-
-/* CÓMICS */
+/* CUADROS DECORATIVOS – CÓMICS */
 {image:"cuadro batman.jpg",category:["cuadros","comics"],label:"Cuadros / Cómics",name:"Batman – Dark Edition",description:"Una presencia icónica que aporta carácter y misterio a cualquier espacio.",price:"Q60.00",stock:"Consulta disponibilidad"},
 {image:"cuadro spiderman noche .jpg",category:["cuadros","comics"],label:"Cuadros / Cómics",name:"Spider-Man – Night Edition",description:"Una composición nocturna para darle personalidad y estilo a tus paredes.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
@@ -288,16 +333,10 @@ const products = [
 {image:"cuadro beatles.jpg",category:["cuadros","musica"],label:"Cuadros / Música",name:"The Beatles – Classic Art",description:"Un clásico musical que aporta historia y personalidad a cualquier rincón.",price:"Q60.00",stock:"Consulta disponibilidad"},
 {image:"cuadro Gorillaz tunel.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Tunnel Edition",description:"Una propuesta visual alternativa con identidad propia y un toque artístico.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-/* CUATRO NUEVAS INCORPORACIONES – CUADROS DECORATIVOS */
-
-/* MÚSICA */
+/* CUATRO NUEVAS INCORPORACIONES – CUADROS */
 {image:"cuadro-Gorillaz-fondo-rojo.jpg",category:["cuadros","musica"],label:"Cuadros / Música Alternativa",name:"Gorillaz – Red Edition",description:"Una propuesta de arte alternativo inspirada en el universo visual de Gorillaz. Color, música y personalidad para darle identidad a tu espacio.",price:"Q60.00",stock:"Consulta disponibilidad"},
-
 {image:"cuadro-nirvana-nevermind.jpg",category:["cuadros","musica"],label:"Cuadros / Grunge",name:"Nirvana – Nevermind",description:"Una portada que marcó generaciones y se convirtió en símbolo de la cultura grunge. Historia musical y espíritu alternativo para tus paredes.",price:"Q60.00",stock:"Consulta disponibilidad"},
-
 {image:"iron-maiden-cuadro.jpg",category:["cuadros","musica"],label:"Cuadros / Heavy Metal",name:"Iron Maiden – Heavy Metal Edition",description:"La fuerza visual de una de las bandas más legendarias del heavy metal. Una pieza para quienes encuentran en el rock parte de su identidad.",price:"Q60.00",stock:"Consulta disponibilidad"},
-
-/* ANIME */
 {image:"cuadro-Goku-blue.jpg",category:["cuadros","anime"],label:"Cuadros / Anime",name:"Dragon Ball – Goku Blue",description:"Poder, transformación y determinación. Goku Blue protagoniza una pieza decorativa inspirada en uno de los universos más emblemáticos del anime.",price:"Q60.00",stock:"Consulta disponibilidad"}
 
 ];
@@ -306,6 +345,7 @@ const products = [
 
 const whatsappNumber="50234899987";
 const productsContainer=document.getElementById("products");
+const urbanIntro=document.getElementById("urbanIntro");
 
 /* PROTECCIÓN DEL TEXTO HTML */
 
@@ -332,6 +372,13 @@ function renderProducts(category="todos"){
  const filteredProducts=products.filter(product=>
   category==="todos" || product.category.includes(category)
  );
+
+ urbanIntro.classList.toggle("visible",category==="urbana");
+
+ if(filteredProducts.length===0){
+  productsContainer.innerHTML="<p>No hay productos disponibles en esta categoría.</p>";
+  return;
+ }
 
  productsContainer.innerHTML=filteredProducts.map(product=>{
 
