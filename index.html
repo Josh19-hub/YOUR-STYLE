@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,8 +54,7 @@ section{padding:70px 7%}
 .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .product{background:var(--surface);border:1px solid var(--line);overflow:hidden;transition:.25s}
 .product:hover{border-color:#786344;transform:translateY(-4px)}
-.product-gallery{display:grid;grid-template-columns:1fr;gap:2px;background:#202020}
-.product-gallery.multiple{grid-template-columns:repeat(2,minmax(0,1fr))}
+.product-gallery{display:block;background:#202020}
 .product-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#202020}
 .product-gallery img.image-error{object-fit:contain;padding:20px;opacity:.55}
 .product-info{padding:18px}
@@ -103,7 +103,6 @@ nav{justify-content:center;gap:15px}
 </header>
 
 <main>
-
 <section class="hero" id="inicio">
 <div class="hero-content">
 <div class="eyebrow">ESTILO · IDENTIDAD · CULTURA</div>
@@ -119,7 +118,6 @@ nav{justify-content:center;gap:15px}
 <h2>Categorías</h2>
 <p>Encuentra aquello que conecta con tu esencia.</p>
 </div>
-
 <div class="categories">
 <a class="category" href="#catalogo" data-category-link="urbana">ROPA URBANA</a>
 <a class="category" href="#catalogo" data-category-link="ropa">ROPA / STREETWEAR</a>
@@ -156,7 +154,6 @@ nav{justify-content:center;gap:15px}
 <h3 id="categoryTitle"></h3>
 <p id="categoryDescription"></p>
 </div>
-
 <div class="products" id="products"></div>
 </section>
 
@@ -173,7 +170,6 @@ nav{justify-content:center;gap:15px}
 <h2>NO SIGAS TENDENCIAS.<br><span>DEFINE TU ESTILO.</span></h2>
 <p>YOUR STYLE reúne música, arte, moda y cultura. Un espacio para expresar aquello que te representa.</p>
 </section>
-
 </main>
 
 <footer>YOUR STYLE © 2026 · GUATEMALA · ESTILO SIN LÍMITES</footer>
@@ -350,9 +346,11 @@ const products = [
 
 {image:"Over-size-La-2.jpg",category:["ropa","urbana"],label:"Streetwear / Oversize",name:"LA – Angel Wings Back",description:"Diseño posterior con alas de ángel. Una combinación de simbolismo y estética urbana en formato oversize.",price:"Q75.00",stock:"Consulta disponibilidad"},
 
-/* COLECCIÓN MUSICAL – NOVIEMBRE 2026 */
+/* COLECCIÓN MUSICAL – CADA VISTA EN SU PROPIA TARJETA */
 
-{images:["playera-slipknot-negra.jpg","playera-slipknot-parte-dorsal.jpg"],category:["musica","ropa"],label:"Música / Heavy Metal",name:"Slipknot – Heavy Edition",description:"Una estética intensa, oscura y desafiante. Una propuesta para quienes encuentran en el heavy metal una expresión auténtica de identidad y carácter.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"playera-slipknot-negra.jpg",category:["musica","ropa"],label:"Música / Heavy Metal",name:"Slipknot – Heavy Edition",description:"Una estética intensa, oscura y desafiante. Una propuesta para quienes encuentran en el heavy metal una expresión auténtica de identidad y carácter.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-slipknot-parte-dorsal.jpg",category:["musica","ropa"],label:"Música / Heavy Metal",name:"Slipknot – Vista posterior",description:"Vista posterior de la colección Slipknot. Una composición de estética intensa para quienes llevan el metal como parte de su identidad.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
 {image:"playera-iron-maiden-negra-momia.jpg",category:["musica","ropa"],label:"Música / Heavy Metal",name:"Iron Maiden – Mummy Edition",description:"Una atmósfera oscura y sobrenatural protagonizada por una figura momificada. La esencia visual del heavy metal clásico en una pieza de carácter.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
@@ -368,7 +366,9 @@ const products = [
 
 {image:"playera-AC-DC-clasica-negra.jpg",category:["musica","ropa"],label:"Música / Hard Rock",name:"AC/DC – Classic Black",description:"El diseño clásico de AC/DC sobre fondo negro. Una declaración de identidad para los amantes del rock sin concesiones.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-{images:["playera-AC-DC-calaveras-frontal.jpg","playera-AC-DC-calaveras.jpg"],category:["musica","ropa"],label:"Música / Hard Rock",name:"AC/DC – Skull & Chains",description:"Calaveras y cadenas en una composición de estética rebelde. Una pieza con presencia tanto en su vista frontal como posterior.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"playera-AC-DC-calaveras-frontal.jpg",category:["musica","ropa"],label:"Música / Hard Rock",name:"AC/DC – Skull & Chains · Frontal",description:"Calaveras y cadenas en una composición de estética rebelde. Una pieza con la fuerza visual característica del hard rock.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-AC-DC-calaveras.jpg",category:["musica","ropa"],label:"Música / Hard Rock",name:"AC/DC – Skull & Chains · Posterior",description:"Vista posterior del diseño AC/DC Skull & Chains. Una composición que mantiene la estética intensa y rebelde del rock.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
 {image:"playera-AC-DC-banda.jpg",category:["musica","ropa"],label:"Música / Hard Rock",name:"AC/DC – Band Edition",description:"Los integrantes de AC/DC protagonizan este diseño dedicado a una banda que convirtió la energía del rock en una leyenda.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
@@ -380,7 +380,9 @@ const products = [
 
 {image:"playera-negra-gorillaz-diseño-alternativo.jpg",category:["musica","ropa"],label:"Música / Alternative",name:"Gorillaz – Skull Smile",description:"Una calavera sonriente aporta un giro enigmático a la estética ilustrada de Gorillaz. Arte, irreverencia y cultura alternativa en una sola pieza.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
-{images:["playera-negra-metálica-ataud.jpg","playera-negra-metálica-ataud-parte-dorsal.jpg"],category:["musica","ropa"],label:"Música / Heavy Metal",name:"Metallica – Coffin Edition",description:"Una composición oscura con diseño de ataúd en ambas vistas. Una pieza inspirada en la intensidad, el simbolismo y la fuerza visual del heavy metal.",price:"Q60.00",stock:"Consulta disponibilidad"},
+{image:"playera-negra-metálica-ataud.jpg",category:["musica","ropa"],label:"Música / Heavy Metal",name:"Metallica – Coffin Edition · Frontal",description:"Una composición oscura con diseño de ataúd. Una pieza inspirada en la intensidad, el simbolismo y la fuerza visual del heavy metal.",price:"Q60.00",stock:"Consulta disponibilidad"},
+
+{image:"playera-negra-metálica-ataud-parte-dorsal.jpg",category:["musica","ropa"],label:"Música / Heavy Metal",name:"Metallica – Coffin Edition · Posterior",description:"Vista posterior de la propuesta Metallica Coffin Edition. Una composición de estética oscura y carácter alternativo.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
 {image:"playera-Led-zeppelin-diseño-alternativo.jpg",category:["musica","ropa"],label:"Música / Classic Rock",name:"Led Zeppelin – Stairway to Heaven",description:"Una figura de inspiración mística con una candela encendida evoca el universo simbólico de Stairway to Heaven. Una pieza para quienes encuentran en el rock una experiencia que trasciende generaciones.",price:"Q60.00",stock:"Consulta disponibilidad"},
 
@@ -430,7 +432,97 @@ const products = [
 
 {image:"playera-biker-KTM-blanca-azul.jpg",category:["motos"],label:"Motos / Motorsport / KTM",name:"KTM – Blue Racing Edition",description:"Una propuesta de inspiración deportiva que combina blanco, azul y naranja. Identidad motocross y cultura racing en una composición llena de movimiento y personalidad.",price:"Q125.00",stock:"Consulta disponibilidad"},
 
-{image:"playera-fox-racing.jpg",category:["motos"],label:"Motos / Motorsport / Fox Racing",name:"Fox Racing – Black & Red",description:"Carácter, velocidad y espíritu deportivo. Una fusión de negro, rojo y blanco inspirada en la cultura Fox Racing, para quienes encuentran su identidad sobre ruedas.",price:"Q125.00",stock:"Consulta disponibilidad"}
+{image:"playera-fox-racing.jpg",category:["motos"],label:"Motos / Motorsport / Fox Racing",name:"Fox Racing – Black & Red",description:"Carácter, velocidad y espíritu deportivo. Una fusión de negro, rojo y blanco inspirada en la cultura Fox Racing, para quienes encuentran su identidad sobre ruedas.",price:"Q125.00",stock:"Consulta disponibilidad"},
+
+/* NUEVA COLECCIÓN – ROPA URBANA Y CULTURA MUSICAL */
+
+/* 1 */
+{image:"Money-Mood-Black-Edition.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Collection",name:"Money Mood – Black Edition",description:"Una expresión de actitud, ambición y personalidad. Una composición monocromática que fusiona estética urbana, cultura del dinero y un estilo provocador. Para quienes prefieren vestir con carácter y dejar que los detalles hablen por sí solos.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 2 */
+{image:"Game_Over–Reaper-Edition.jpg",category:["ropa","urbana"],label:"Streetwear / Dark Collection",name:"Game Over – Reaper Edition",description:"Una composición de estética oscura donde la Parca representa el misterio, la fugacidad del tiempo y el inevitable final de cada partida. Un diseño de fuerte presencia visual, para quienes encuentran en lo alternativo una forma de expresión.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 3 */
+{image:"Santa_Muerte–Dark_Edition.jpg",category:["ropa","urbana"],label:"Streetwear / Dark Collection",name:"Santa Muerte – Dark Edition",description:"Una representación de misterio y simbolismo que evoca la dualidad entre la vida y la muerte. La figura de la Santa Muerte, acompañada de una estética sombría y detalles de inspiración gótica, convierte esta pieza en una expresión visual de carácter, misticismo y personalidad.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 4 */
+{image:"Dark_Embrace–Eternal_Edition.jpg",category:["ropa","urbana"],label:"Streetwear / Dark Collection",name:"Dark Embrace – Eternal Edition",description:"Una composición donde el misterio y la belleza convergen en una misma imagen. La figura de la Parca y el abrazo que protagoniza el diseño evocan la dualidad entre lo efímero y lo eterno. Una pieza de estética oscura, artística y profundamente simbólica, para quienes encuentran belleza en lo inusual.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 5 */
+{image:"West_Coast_Legacy–Hip-Hop.jpg",category:["musica","ropa","urbana"],label:"Música / Hip-Hop / Streetwear",name:"West Coast Legacy – Hip-Hop",description:"Una pieza que evoca la esencia de la cultura hip-hop de la Costa Oeste. Su composición combina actitud, identidad callejera y una estética que marcó generaciones. Un diseño con carácter propio, inspirado en una época donde la música se convirtió en una forma de expresión y pertenencia.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 6 */
+{image:"Snoop_Dogg-Tupac–Cultura_hip-hop.jpg",category:["musica","ropa","urbana"],label:"Música / Hip-Hop",name:"Snoop Dogg & Tupac – Cultura Hip-Hop",description:"Una pieza de inspiración musical que celebra la identidad del rap, su legado cultural y una actitud que trasciende generaciones.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 7 */
+{image:"Cartel_de_Santa-identidad-urbana.jpg",category:["musica","ropa","urbana"],label:"Playera negra · Cultura hip-hop mexicana",name:"Cartel de Santa – Identidad Urbana",description:"Una representación de la esencia de Cartel de Santa: irreverencia, actitud y una identidad musical que rompió esquemas. Para quienes llevan el hip-hop más allá de los audífonos y lo convierten en parte de su estilo.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 8 */
+{image:"Cartel_de_Santa–Actitud-sin-censura.jpg",category:["musica","ropa","urbana"],label:"Playera negra · Cultura hip-hop",name:"Cartel de Santa – Actitud sin Censura",description:"Una expresión de irreverencia y personalidad inspirada en el universo de Cartel de Santa. Una mezcla de actitud urbana, estética alternativa y provocación visual para quienes hacen de la música parte de su identidad.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 9 */
+{image:"Cartel_de_Santa_Dogs.jpg",category:["musica","ropa","urbana"],label:"Música / Hip-Hop / Streetwear",name:"Cartel de Santa – Dogs Edition",description:"Una playera negra con el sello de Cartel de Santa y un diseño frontal protagonizado por perros pitbull. Una propuesta de estética ruda y callejera, con la actitud característica de la cultura hip-hop.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* 10 */
+{image:"Bob_Marley–The_King_of_Reggae.jpg",category:["musica","ropa"],label:"Playera negra · Cultura reggae",name:"Bob Marley – The King of Reggae",description:"Un homenaje a una figura que convirtió la música en un mensaje de libertad, conciencia y resistencia. Su legado trasciende generaciones, llevando consigo una filosofía donde la paz, la identidad y la unión tienen su propia voz. Una prenda para quienes encuentran en la música mucho más que un ritmo: una forma de sentir y entender la vida.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* ROYALITY – CADA COLOR Y DISEÑO POR SEPARADO */
+
+/* 11 */
+{image:"ROYALITY–La esencia_de_la_corona-frente.jpg",category:["ropa","urbana"],label:"Streetwear / Royalty Collection",name:"ROYALITY – La Esencia de la Corona",description:"Una corona que representa seguridad, carácter y autenticidad. El contraste entre negro y dorado aporta distinción, mientras su estética dripping añade una expresión urbana y contemporánea. Porque el verdadero estilo no necesita imponerse: se reconoce por sí mismo.",price:"Q85.00",stock:"Consulta disponibilidad"},
+
+/* 12 */
+{image:"ROYALITY–La esencia_de_la_corona-blanco.jpg.jpg",category:["ropa","urbana"],label:"Streetwear / Royalty Collection",name:"ROYALITY – White Edition",description:"Una corona que representa seguridad, carácter y autenticidad. El contraste entre negro y dorado aporta distinción, mientras su estética dripping añade una expresión urbana y contemporánea. Una versión blanca para quienes reconocen el valor de los detalles.",price:"Q85.00",stock:"Color blanco · Consulta disponibilidad"},
+
+/* 13 */
+{image:"ROYALITY–La esencia_de_la_corona-corinto.jpg",category:["ropa","urbana"],label:"Streetwear / Royalty Collection",name:"ROYALITY – Corinto Edition",description:"Una corona que representa seguridad, carácter y autenticidad. El contraste entre negro y dorado aporta distinción, mientras su estética dripping añade una expresión urbana y contemporánea. Una versión corinto con personalidad propia.",price:"Q85.00",stock:"Color corinto · Consulta disponibilidad"},
+
+/* 14 */
+{image:"ROYALITY–La esencia_de_la_corona-negro.jpg",category:["ropa","urbana"],label:"Streetwear / Royalty Collection",name:"ROYALITY – Black Edition",description:"Una corona que representa seguridad, carácter y autenticidad. El contraste entre negro y dorado aporta distinción, mientras su estética dripping añade una expresión urbana y contemporánea. El negro aporta una presencia sobria y definida.",price:"Q85.00",stock:"Color negro · Consulta disponibilidad"},
+
+/* ANGEL COMES – CADA FOTOGRAFÍA INDIVIDUAL */
+
+/* 15 */
+{image:"Angel-Comes–Fe_y_esperanza.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Fe y Esperanza",description:"Entre sombras y plegarias, una imagen que evoca protección, esperanza y la búsqueda de algo superior. Una expresión visual de fe con carácter alternativo.",price:"Q85.00",stock:"Diseño frontal · Consulta disponibilidad"},
+
+/* 16 */
+{image:"Angel-Comes–Fe_y_esperanza-posterior.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – White Back Edition",description:"Vista posterior de Angel Comes. Una composición que evoca protección, esperanza y la búsqueda de algo superior, con una estética alternativa y simbólica.",price:"Q85.00",stock:"Diseño posterior blanco · Consulta disponibilidad"},
+
+/* 17 */
+{image:"Angel-Comes–Fe_y_esperanza-naranja.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Orange Edition",description:"Entre sombras y plegarias, una imagen que evoca protección, esperanza y la búsqueda de algo superior. Una expresión visual de fe con carácter alternativo.",price:"Q85.00",stock:"Diseño frontal naranja · Consulta disponibilidad"},
+
+/* 18 */
+{image:"Angel-Comes–Fe_y_esperanza-naranja-posterior.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Orange Back Edition",description:"Vista posterior de Angel Comes en color anaranjado. Una composición que conserva el simbolismo de protección y esperanza con una estética alternativa.",price:"Q85.00",stock:"Diseño posterior naranja · Consulta disponibilidad"},
+
+/* 19 */
+{image:"Angel-Comes–Fe_y_esperanza-negro.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Black Edition",description:"Entre sombras y plegarias, una imagen que evoca protección, esperanza y la búsqueda de algo superior. Una expresión visual de fe con carácter alternativo.",price:"Q85.00",stock:"Diseño frontal negro · Consulta disponibilidad"},
+
+/* 20 */
+{image:"Angel-Comes–Fe_y_esperanza-negro-posterior.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Black Back Edition",description:"Vista posterior de Angel Comes en color negro. Una composición que evoca protección, esperanza y una expresión de fe con carácter alternativo.",price:"Q85.00",stock:"Diseño posterior negro · Consulta disponibilidad"},
+
+/* 21 */
+{image:"Angel-Comes–Fe_y_esperanza-gris.jpg",category:["ropa","urbana"],label:"Streetwear / Fe y simbolismo",name:"Angel Comes – Grey Edition",description:"Una interpretación de Angel Comes en tono gris. Una imagen que evoca protección, esperanza y la búsqueda de algo superior, con una estética alternativa.",price:"Q85.00",stock:"Diseño gris · Consulta disponibilidad"},
+
+/* ANTI SOCIAL SOCIAL CLUB – VISTAS INDIVIDUALES */
+
+/* 22 */
+{image:"Anti_Social-Social_Club–Pink_Bunny.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Collection",name:"Anti Social Social Club – Pink Bunny",description:"Una declaración de individualidad con esencia urbana. Su contraste de colores y estética desenfadada proyectan una personalidad que no necesita seguir las reglas para destacar. Color mostaza, logotipo Anti Social Social Club y emblemático conejo rosa.",price:"Q155.00",stock:"Consulta disponibilidad"},
+
+/* 23 */
+{image:"Anti_Social-Social_Club–Pink_Bunny-posterior.jpg.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Collection",name:"Anti Social Social Club – Pink Bunny · Back",description:"Vista posterior de la propuesta Pink Bunny. Una composición streetwear que conserva el contraste de colores y la personalidad urbana de esta edición.",price:"Q155.00",stock:"Vista posterior · Consulta disponibilidad"},
+
+/* ANIME */
+
+/* 24 */
+{image:"Goku-Símbolo_Kame.jpg",category:["anime","ropa"],label:"Anime / Dragon Ball",name:"Goku – Símbolo Kame",description:"Un símbolo que representa disciplina, aprendizaje y evolución. Inspirada en el camino de las artes marciales, esta pieza combina la energía de Dragon Ball con un diseño limpio y reconocible en color naranja intenso, con kanji Kame en negro y blanco.",price:"Q75.00",stock:"Consulta disponibilidad"},
+
+/* ROPA URBANA */
+
+/* 25 */
+{image:"Enjoy-the-Madness–Bear.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Collection",name:"Enjoy the Madness – Bear",description:"Entre la locura y la autenticidad existe un estilo propio. Una pieza de inspiración urbana que combina ilustración, actitud y un mensaje sencillo: disfruta tu esencia, sin dejar de ser tú. Diseño blanco con oso encapuchado y detalles amarillos.",price:"Q85.00",stock:"Consulta disponibilidad"},
+
+/* 26 */
+{image:"Smile-Bear.jpg",category:["ropa","urbana"],label:"Streetwear / Urban Collection",name:"Smile Bear – Black Edition",description:"Una sonrisa no siempre cuenta toda la historia. Una ilustración de espíritu urbano que juega con los contrastes entre ternura, irreverencia y personalidad. Sencilla en sus colores, pero difícil de pasar desapercibida. Diseño negro con oso ilustrado en blanco y negro.",price:"Q85.00",stock:"Consulta disponibilidad"}
 
 ];
 
@@ -541,21 +633,18 @@ return;
 productsContainer.innerHTML=filteredProducts.map(product=>{
 
 const originalIndex=products.indexOf(product);
-const images=product.images || [product.image];
-const galleryClass=images.length>1?"product-gallery multiple":"product-gallery";
-
-const imageHTML=images.map((filename,index)=>`
-<img
-src="${imageURL(filename)}"
-alt="${escapeHTML(product.name)}${images.length>1?(index===0?" - Vista frontal":" - Vista posterior"):""}"
-loading="lazy"
-onerror="this.classList.add('image-error');this.alt='Imagen no encontrada: ${escapeHTML(filename)}';"
->
-`).join("");
+const filename=product.image;
 
 return `
 <article class="product">
-<div class="${galleryClass}">${imageHTML}</div>
+<div class="product-gallery">
+<img
+src="${imageURL(filename)}"
+alt="${escapeHTML(product.name)}"
+loading="lazy"
+onerror="this.classList.add('image-error');this.alt='Imagen no encontrada: ${escapeHTML(filename)}';"
+>
+</div>
 <div class="product-info">
 <span class="product-category">${escapeHTML(product.label)}</span>
 <h3>${escapeHTML(product.name)}</h3>
